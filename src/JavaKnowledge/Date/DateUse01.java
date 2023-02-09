@@ -1,4 +1,4 @@
-package JavaKnowledge.Commons_lang3;
+package JavaKnowledge.Date;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -6,23 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Main {
-
-
-
-       /*
-        //判断是否为空(注：isBlank与isEmpty 区别)
-        StringUtils.isBlank(null);StringUtils.isBlank("");StringUtils.isBlank(" ");//---true
-        StringUtils.isNoneBlank(" ", "bar");//---false
-
-        StringUtils.isEmpty(null);StringUtils.isEmpty("");//---true
-        StringUtils.isEmpty(" ");//---false
-        StringUtils.isNoneEmpty(" ", "bar");//---true
-
-*/
-//        Date now = new Date();
-//        System.out.println(now);
-
+/*
+  输出某个年月到某个年月的方法
+ */
+public class DateUse01 {
     public static List<String> getBetweenYearMonth(String startDate, String endDate) {
 //            Integer startY = Integer.valueOf(startDate.split("-")[0]);
 //            Integer startM = Integer.valueOf(startDate.split("-")[1]);
@@ -74,6 +61,4 @@ public class Main {
         System.out.println(getBetweenYearMonth("202005", now1));
 
     }
-
-
 }
