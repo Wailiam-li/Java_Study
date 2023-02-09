@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateDemp {
+public class DateDemo01 {
     public static void main(String[] args) throws ParseException {
 
 
