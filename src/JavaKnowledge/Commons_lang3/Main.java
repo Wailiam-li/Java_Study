@@ -71,7 +71,7 @@ public class Main {
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
         String now1 = sdf.format(now);
-        System.out.println(getBetweenYearMonth("202005", now1));
+        System.out.println(getBetweenYearMonth("202301", now1));
 
     }
 
