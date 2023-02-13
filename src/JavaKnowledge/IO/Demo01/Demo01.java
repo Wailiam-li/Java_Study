@@ -11,6 +11,8 @@ public class Demo01 {
 
     public static void main(String[] args) throws IOException {
 
+        //用于读取时间计算
+        long start = System.currentTimeMillis();
 
         //创建读入对象
         FileInputStream fis = new FileInputStream("C:\\Users\\13744\\Videos\\demo01.mp4");
@@ -26,6 +28,9 @@ public class Demo01 {
         //关闭资源时：先开的最后关闭
         fos.close();
         fis.read();
+
+        long end = System.currentTimeMillis();
+        System.out.println("花费时间(毫秒)：" + (end - start)); // 13587毫秒
 
     }
 }
