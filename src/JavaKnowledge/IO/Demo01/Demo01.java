@@ -1,7 +1,6 @@
-package JavaKnowledge.File.Demo;
+package JavaKnowledge.IO.Demo01;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -14,9 +13,9 @@ public class Demo01 {
 
 
         //创建读入对象
-        FileInputStream fis = new FileInputStream("C:\\Users\\13744\\Videos\\23.mp4");
+        FileInputStream fis = new FileInputStream("C:\\Users\\13744\\Videos\\demo01.mp4");
         //写入的位置    注：最后面要写文件的名字，例：23.mp4
-        FileOutputStream fos = new FileOutputStream("C:\\Users\\13744\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\File\\Demo\\23.mp4");
+        FileOutputStream fos = new FileOutputStream("C:\\Users\\13744\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\IO\\Demo01\\demo.mp4");
 
         int b;
         //读取文件

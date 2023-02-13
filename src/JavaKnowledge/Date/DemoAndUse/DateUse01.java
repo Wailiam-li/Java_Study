@@ -1,4 +1,4 @@
-package JavaKnowledge.Date;
+package JavaKnowledge.Date.DemoAndUse;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 /*
-  输出某个年月到某个年月的方法
+     得到某个年月到某个年月区间的方法
  */
 public class DateUse01 {
     public static List<String> getBetweenYearMonth(String startDate, String endDate) {

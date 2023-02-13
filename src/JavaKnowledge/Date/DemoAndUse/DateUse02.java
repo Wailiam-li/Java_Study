@@ -1,4 +1,4 @@
-package JavaKnowledge.Date;
+package JavaKnowledge.Date.DemoAndUse;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -6,9 +6,8 @@ import java.util.Date;
 
 /*
  * 获取某年某月的最后一天
-         * @return
-         *
-         */
+         关键点：用到了Calendar这个类
+ */
 public class DateUse02 {
 
     //方法1
