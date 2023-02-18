@@ -2,7 +2,7 @@ package JavaKnowledge.Args;
 
 
 /**
-*  可变参数
+*       可变参数
  */
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Main {
     }
 
 
-    /* 这里使用到可变参数,意为可写某一类型的任意个参数。
+    /* 这里使用到可变参数,意为 可传入 某一类型的 任意个参数。
     * 使用方法： 类型...名字，例：int...args
     * 方法原理：底层依旧是个数组，将每个元素放入数组中，遍历数组。
      */

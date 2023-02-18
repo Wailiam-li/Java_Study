@@ -7,5 +7,8 @@ public class arrayDemo {
         String[] b = {"liwei", "lihui", "liweiwei"};  //!!这里是字符串，不是单个字符，因此要用String！！
 
 
+//    if (a.length==0){
+//
+//    }
     }
 }

@@ -1,4 +1,4 @@
-package JavaKnowledge.IO.Demo02;
+package JavaKnowledge.IO.Demo.Demo02;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,11 +1,11 @@
-package JavaKnowledge.IO;
+package JavaKnowledge.IO.ByteStream;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 /*
-  IO流
+     IO 字节流
  */
 public class Main {
     public static void main(String[] args) throws IOException {
