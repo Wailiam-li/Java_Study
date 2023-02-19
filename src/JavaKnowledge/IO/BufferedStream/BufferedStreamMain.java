@@ -6,6 +6,7 @@ import java.io.IOException;
 
 /*
      缓冲流
+         可分为字节缓冲流 和 字符缓冲流
  */
 public class BufferedStreamMain {
     public static void main(String[] args) throws IOException {

@@ -1,11 +1,11 @@
-package JavaKnowledge.IO.Demo.Demo02;
+package JavaKnowledge.IO.ByteStream.Demo.Demo02;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 /*
-    一次读取多个字节的文件
+    字节流 ：一次读取多个字节的文件
  */
 public class Demo02 {
     public static void main(String[] args) throws IOException {
