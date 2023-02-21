@@ -1,20 +1,22 @@
-package JavaKnowledge.IO.Demo.Demo02;
+package JavaKnowledge.IO.ByteStream.Demo.Demo02;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 /*
-    一次读取多个字节的文件
+    字节流 ：一次读取多个字节的文件
  */
 public class Demo02 {
     public static void main(String[] args) throws IOException {
 
         //用于读取时间计算。   记：系统当前的时间可以用System.currentTimeMillis()方法得出来！！
         long start = System.currentTimeMillis();
+
         //创建读取对象
         FileInputStream fis = new FileInputStream("C:\\Users\\13744\\Videos\\23.mp4");
         FileOutputStream fos = new FileOutputStream("C:\\Users\\13744\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\IO\\Demo02\\23.mp4");
+
         //读取文件
 
         int len;

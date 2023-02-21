@@ -1,11 +1,11 @@
-package JavaKnowledge.IO.Demo.Demo01;
+package JavaKnowledge.IO.ByteStream.Demo.Demo01;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 /*
-  文件拷贝案例
+       字节输入流与输出流 文件拷贝案例
  */
 public class Demo01 {
 
