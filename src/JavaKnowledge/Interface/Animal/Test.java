@@ -1,4 +1,4 @@
-package ALL.Interface.Animal;
+package JavaKnowledge.Interface.Animal;
 
 public class Test {
 
