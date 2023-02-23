@@ -14,10 +14,10 @@ public class ObjectStreamMain {
         /*
             序列化流
         */
-        Student s = new Student("李威", 23);
+        Student s = new Student("李威很帅", 23,"赣州市");
 
-        //创建对象
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("C:\\Users\\13744\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\IO\\ObjectStream\\a.txt"));
+        //创建对象         注：使用相对路径
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("src/JavaKnowledge/IO/ObjectStream/a.txt"));
 
 
         //写入文件中
