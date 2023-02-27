@@ -22,6 +22,7 @@ public class TheadCase01 {
         t1.start();
         t2.start();
 
+        //李威很帅
 
     }
 }
