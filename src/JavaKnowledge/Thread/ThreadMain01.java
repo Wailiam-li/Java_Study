@@ -39,6 +39,7 @@ public class ThreadMain01 {
            public static void yield()     出让线程/礼让线程
                                          理解：在一个线程使用完一次cpu后，将再次重新让多个线程抢夺cpu，使得
                                               各线程运行尽可能均衡。
+                                              ！！！
          */
     }
 }
