@@ -12,11 +12,7 @@ public class Test {
         student1.add(new Student("Lili", 18, "女"));
 
         //往集合中添加对象的操作？？————————>
-//        ArrayList<Student> student2 = new ArrayList<>("")
-//        ArrayList<Student> student2 = new ArrayList<>();
-//        ArrayList<Student> student3 = new ArrayList<>();
-//        student2.add(new Student("weiwei", 22, "男"));
-//        student3.add(new Student("huihui", 22, "女"));
+
 
         //注意！！一个集合可以包含多个对象，因此：定义一个集合即可！！
         student1.add(new Student("weiwei", 23, "男"));

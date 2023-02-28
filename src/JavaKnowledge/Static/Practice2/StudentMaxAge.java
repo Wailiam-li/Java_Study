@@ -6,7 +6,6 @@ import java.util.List;
 public class StudentMaxAge {
 
     public static int StudentMaxAge(List<Student> s) {
-        //对了一个集合也可以包含多个对象，为什么我定义了三个集合？
         //使用流遍历集合,可获取最大值
         //int maxAge = s.stream().map(s -> s.getAge());   //我记得可以通过lambda表达式直接获取!!问题是我记不住
         //考虑用增强的for：

@@ -1,40 +1,21 @@
 package JavaKnowledge.Static.Practice2;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
-public class Student {
+import java.io.Serializable;
+
+@Data             //注：@Data 注解只提供类的get、 set、 equals、 hashCode、 toString等方法，不提供构造方法！！！！
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Student implements Serializable {
+    private static final long serialVersionUID = 6115832161017809559L;
+
     private String name;
     private int age;
     private String gender;
 
-    public Student(String name, int age, String gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 }
