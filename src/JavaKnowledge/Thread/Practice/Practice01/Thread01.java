@@ -4,7 +4,7 @@ import lombok.SneakyThrows;
 
 public class Thread01 extends Thread {
 
-    //加上static关键字  表示这个类所有的对象，都共享ticket数据!!!
+    //加上static关键字  表示这个类所有的对象，都共享ticket数据!!!    体现了static关键字在成员变量中的使用！！！
     static int i = 100;
 
     //锁对象，一定是要唯一的，因此加上static关键字，表示全局共享同一个。
