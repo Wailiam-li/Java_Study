@@ -38,10 +38,11 @@ public class Main {
     }
 
     /*
-        class类中用于获取构造方法的方法
+        class类中用于获取构造方法的方法(四种常用)
     */
+
     @Test       //用了junit 4.8.2的jar包 才成功!!  更换junit 版本：junit4 刚开始用的junit-4.12.jar版本，但是报了以上错误，换成了其他版本junit-4.8.2.jar，测试成功
-    public void getConstrustors() throws ClassNotFoundException {
+    public void getConstrustors() throws ClassNotFoundException { //获取公共的所有构造参数
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Constructor[] constructors = clazz.getConstructors();
         for (Constructor c : constructors) {
@@ -49,5 +50,22 @@ public class Main {
         }
     }
 
+    @Test     //获取所有的构造参数
+    public void getDeclaredConstrustors() throws ClassNotFoundException {
+        Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
+        Constructor[] constructors = clazz.getDeclaredConstructors();
+        for (Constructor c : constructors) {
+            System.out.println(c);
+        }
+    }
+
+    @Test     //获取单个构造参数
+    public void getDeclaredConstrustor() throws ClassNotFoundException, NoSuchMethodException {
+        Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
+        Constructor c = clazz.getDeclaredConstructor(String.class);
+        //这里需要与构造参数的类型对应上,例是:String name,就传String.class
+        System.out.println(c);
+
+    }
 
 }
