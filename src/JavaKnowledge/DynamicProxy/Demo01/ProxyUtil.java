@@ -24,7 +24,7 @@ public class ProxyUtil {
     //传入参数：需要被代理的对象
     //返回值：返回通过该方法产生出的代理对象(因为要实现接口，所以也可以用接口类作为返回类型)
 
-    public Star createProxy(BigStar bigStar) {
+    public static Star createProxy(BigStar bigStar) {
         Star starProxy = (Star) Proxy.newProxyInstance(ProxyUtil.class.getClassLoader(),
                 new Class[]{Star.class},  //注：一般要使用new，new出来
                 new InvocationHandler() {

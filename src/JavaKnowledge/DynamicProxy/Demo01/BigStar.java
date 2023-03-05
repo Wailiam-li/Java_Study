@@ -8,7 +8,7 @@ public class BigStar implements Star {
     @Override
     public String sing(String songName) {
         System.out.println(this.name + "正在唱歌:" + songName);
-        return "thank you!";
+        return "演唱完毕,感谢大家的捧场! thank you!";
     }
 
     @Override
