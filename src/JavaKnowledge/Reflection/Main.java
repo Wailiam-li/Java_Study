@@ -5,6 +5,8 @@ import JavaKnowledge.Reflection.entity.Student;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /*
      反射的作用:通过反射可以获取到一个类中的 字段 、成员方法 、构造方法 等信息
@@ -59,13 +61,31 @@ public class Main {
         }
     }
 
-    @Test     //获取单个构造参数
-    public void getDeclaredConstrustor() throws ClassNotFoundException, NoSuchMethodException {
+    @Test     //获取单个构造参数    //可以利用构造方法创建对象
+    public void getDeclaredConstrustor() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Constructor c = clazz.getDeclaredConstructor(String.class);
+                     //知识：这里的Declared获取所有权限的构造函数 只用于查看，要想使用来创建对象，还得加
         //这里需要与构造参数的类型对应上,例是:String name,就传String.class
-        System.out.println(c);
+        Student lw =(Student) c.newInstance( "李威");
+
+        System.out.println(lw);
 
     }
+
+
+
+
+
+    @Test     //获取所有成员变量
+    public void getDeclaredFields() throws ClassNotFoundException, NoSuchMethodException {
+        Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
+        Field[] declaredFields = clazz.getDeclaredFields();
+        for(Field  d:declaredFields) {
+            System.out.println(d);
+        }
+    }
+
+
 
 }
