@@ -1,13 +1,11 @@
 package JavaKnowledge.DynamicProxy.Demo01;
 
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /*
-     用于创建代理对象
-
+     用于创建代理对象。   （比较高级，值得研究）
 
      知识：
        java.lang.reflect.Proxy类:提供了为对象产生代理对象的万法:
