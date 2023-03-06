@@ -1,8 +1,8 @@
 package JavaKnowledge.Reflection.entity;
 
 public class Person {
-    String name;
-    int age;
+        String name;
+   private int age;
 
     public Person(String name, int age) {
         this.name = name;
@@ -21,9 +21,9 @@ public class Person {
     }
 
 
-//    public void getName() {
-//        return name;
-//    }
+    public String getName() {
+        return name;
+    }
 
     public void setName(String name) {
         this.name = name;

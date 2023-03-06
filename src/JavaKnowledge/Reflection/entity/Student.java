@@ -5,8 +5,9 @@ public class Student extends Person {
         this.name = "学生";
     }
 
-    public void getName() {
+    public String getName() {
         System.out.println("?");
+        return this.name;
     }
 
 }
