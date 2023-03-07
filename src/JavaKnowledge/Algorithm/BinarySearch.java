@@ -1,6 +1,8 @@
 package JavaKnowledge.Algorithm;
 
 /*
+      Algorithm：算法
+
  *    二分查找排序算法
  *   前提条件：数据要是有序的
  */

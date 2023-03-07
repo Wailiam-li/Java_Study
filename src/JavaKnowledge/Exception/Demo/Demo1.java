@@ -1,4 +1,4 @@
-package JavaKnowledge.Exeption.Demo;
+package JavaKnowledge.Exception.Demo;
 
 /*
    关于throw和throws的使用 案例:求数组中的最大值
