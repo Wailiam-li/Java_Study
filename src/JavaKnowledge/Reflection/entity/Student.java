@@ -1,30 +1,31 @@
 package JavaKnowledge.Reflection.entity;
 
-public class Student extends Person {
+public class Student  {
 
     private String name;
     private int age;
+    private String gender;
 
     public Student() {
 
     }
 
-    public Student(int age, String name) {
+    public Student(String name, int age, String gender) {
         this.name = name;
         this.age = age;
+        this.gender = gender;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
+
     public int getAge() {
-        return age;
+        return this.age;
     }
 
-    @Override
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -33,4 +34,11 @@ public class Student extends Person {
         return this.name;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 }

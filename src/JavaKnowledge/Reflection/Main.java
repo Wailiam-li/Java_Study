@@ -34,7 +34,7 @@ public class Main {
         System.out.println("c2.hashCode():" + clazz2.hashCode());
 
         // 方式三:通过对象查询
-        Person person = new Student();
+        Student person = new Student();
         Class clazz3 = person.getClass();
         System.out.println("c3.hashCode():" + clazz3.hashCode());
 

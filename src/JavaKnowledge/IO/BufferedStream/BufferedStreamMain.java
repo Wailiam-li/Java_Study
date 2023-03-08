@@ -16,7 +16,7 @@ public class BufferedStreamMain {
                    特有的方法：  public string readLine() 读一整行
 
          */
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\13744\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\IO\\BufferedStream\\tengwanggexu.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\李威威\\IdeaProjects\\Java_Study\\src\\JavaKnowledge\\IO\\BufferedStream\\tengwanggexu.txt"));
         //问：这里为什么是new 一个FileReader呢？
         //————>BufferedReader是FileReader的包装类，里面的参数Reader类是一个抽象类，需要放继承了Reader抽象类的基本流FileReader
         String line;

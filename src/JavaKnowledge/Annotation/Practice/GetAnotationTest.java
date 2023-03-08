@@ -14,10 +14,6 @@ public class GetAnotationTest {
     @org.junit.Test    //解析类中的注解
     public void parseClass() throws ClassNotFoundException {
         Class aClass = Class.forName("JavaKnowledge.Annotation.Practice.AnnotationUse");
-//        Annotation[] declaredAnnotations = aClass.getDeclaredAnnotations();
-//        for (Annotation d : declaredAnnotations) {
-//            System.out.println(d);
-//        }
             //获取更具体的值
             if (aClass.isAnnotationPresent(MyTest04.class)){
                 MyTest04 myTest04 = (MyTest04)aClass.getAnnotation(MyTest04.class);
@@ -48,6 +44,7 @@ public class GetAnotationTest {
     @org.junit.Test    //解析类中的注解
     public void parseMethod02() throws ClassNotFoundException, NoSuchMethodException {
         Class aClass = Class.forName("JavaKnowledge.Annotation.Practice.AnnotationUse");
+
         Method test02 = aClass.getMethod("test02");
         //获取更具体的值
         if (test02.isAnnotationPresent(MyTest02.class)){
@@ -55,7 +52,7 @@ public class GetAnotationTest {
            // MyTest02 annotation = test02.getAnnotation(MyTest02.class);
             //注意：这里是方法.getAnnotation()
             System.out.println(myTest02);
-            System.out.println(myTest02.value());
+            System.out.println(myTest02.value());  //注：这里的value只是@MyTest02的一个属性值，和下面的age一样。
             System.out.println(myTest02.age());
         }
 
