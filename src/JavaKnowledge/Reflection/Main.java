@@ -45,7 +45,8 @@ public class Main {
     */
 
     @Test       //用了junit 4.8.2的jar包 才成功!!  更换junit 版本：junit4 刚开始用的junit-4.12.jar版本，但是报了以上错误，换成了其他版本junit-4.8.2.jar，测试成功
-    public void getConstrustors() throws ClassNotFoundException { //获取公共的所有构造参数
+    //获取公共的所有构造参数
+    public void getConstrustors() throws ClassNotFoundException {
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Constructor[] constructors = clazz.getConstructors();
         for (Constructor c : constructors) {
@@ -68,10 +69,8 @@ public class Main {
         Constructor c = clazz.getDeclaredConstructor(String.class, int.class);
         //知识：这里的Declared获取所有权限的构造函数 只用于查看，要想使用来创建对象，还得加
         //这里需要与构造参数的类型对应上,例是:String name,就传String.class
-
         c.setAccessible(true);  //暴力反射：表示临时取消权限的校验
         Person lw = (Person) c.newInstance("李威", 17);
-
         System.out.println(lw);
 
     }
@@ -118,15 +117,13 @@ public class Main {
     public void getMethod() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Method method = clazz.getMethod("eat", String.class);
-        //这里为了防止方法重载，所以需要传方法名及形参类型
+        //注：上面 这里为了防止方法重载，所以需要传 方法名及 形参类型
         System.out.println(method);
-
         //获取该方法抛出的异常
-        Class<?>[] exceptionTypes = method.getExceptionTypes();
-        for (Class<?> exceptionType : exceptionTypes) {
-            System.out.println(exceptionType);
-        }
-
+//        Class<?>[] exceptionTypes = method.getExceptionTypes();
+//        for (Class<?> exceptionType : exceptionTypes) {
+//            System.out.println(exceptionType);
+//        }
 
         //重难点！！！ 方法运行:即获取到成员方法后让它运行起来
       /* Method类中用于创建对象的方法
@@ -137,10 +134,10 @@ public class Main {
 
         Person person = new Person();
 
-        // 参数一s:表示方法的调用者
+        // 参数一person:表示方法的调用者
         // 参数二"烧烤":表示在调用方法的时候传递的实际参数
         method.setAccessible(true);  //取消权限
-        Object shaokao = method.invoke(person, "烧烤");  //即可使eat()方法运行
+        Object shaokao = method.invoke(person, "烧烤");  // 即可使eat()方法运行
         System.out.println(shaokao);  //返回值为null
 
     }
