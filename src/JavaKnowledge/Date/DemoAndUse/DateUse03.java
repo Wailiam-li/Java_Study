@@ -1,7 +1,7 @@
 package JavaKnowledge.Date.DemoAndUse;
 
 /*
-    计算某月某日到某月某日的天数
+    计算某月某日到某月某日的天数，本例中根据 某人的出生年月日 计算距 今年的生日还有多少天
 
          思路：将两个日期换成对应的毫秒值，再相减得出的值再除以一天的时间
  */
@@ -17,12 +17,14 @@ public class DateUse03 {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
+        //当前的时间，得到毫秒值
         calendar.setTime(new Date());
         long time1 = calendar.getTimeInMillis();
         //这里需要把那个人的生日移过来，即将他的出生年 改成 当前年
         String sdate01 = "1999-10-12";
         StringBuilder stringBuilder = new StringBuilder();
         String date01 = stringBuilder.append(sdf.format(new Date()).substring(0, 4)).append(sdate01.substring(4, 10)).toString();
+
         Date d2 = sdf.parse(date01);
         calendar.setTime(d2);
         long time2 = calendar.getTimeInMillis();

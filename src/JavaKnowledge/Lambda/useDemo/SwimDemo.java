@@ -1,4 +1,4 @@
-package JavaKnowledge.Lambda;
+package JavaKnowledge.Lambda.useDemo;
 
 public class SwimDemo {
     public static void main(String[] args) {

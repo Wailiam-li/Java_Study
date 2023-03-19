@@ -1,4 +1,4 @@
-package JavaKnowledge.Lambda;
+package JavaKnowledge.Lambda.useDemo;
 
 @FunctionalInterface
 public interface Swimming {
