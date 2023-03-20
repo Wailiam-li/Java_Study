@@ -1,4 +1,4 @@
-package JavaKnowledge.Collections.Test01_RandomChooseName;
+package JavaKnowledge.Collections.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +7,7 @@ import java.util.Random;
 /*
  *  随机点名
  */
-public class Main {
+public class Test01_RandomChooseName {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>();
         Collections.addAll(list, "李威", "李辉", "李慧大笨蛋", "李四", "李嘉", "李林", "李六");
