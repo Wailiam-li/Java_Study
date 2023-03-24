@@ -1,8 +1,8 @@
 package JavaKnowledge.Z_Practice;
 /*
 给你一个正整数n。
-用even表示在n的二进制形式(下标从О开始)中值为1的偶数下标的个数。
-用odd表示在n的二进制形式(下标从О开始)中值为1的奇数下标的个数。返回整数数组answer，其中answer = [even,odd] 。
+    用even表示在n的二进制形式(下标从О开始)中值为1的偶数下标的个数。
+    用odd表示在n的二进制形式(下标从О开始)中值为1的奇数下标的个数。返回整数数组answer，其中answer = [even,odd] 。
 
  */
 

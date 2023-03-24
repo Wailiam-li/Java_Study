@@ -1,7 +1,9 @@
 package JavaKnowledge.Stream;
 
+import JavaKnowledge.Stream.entity.User;
 import org.junit.Test;
 
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -129,4 +131,24 @@ public class StreamMethod {
     }
 
 
+    /*
+     *Collectors.groupingBy根据一个或多个属性对集合中的项目进行分组
+     */
+    @Test
+    public static void main(String[] args) throws ParseException {
+        List<User> users = Arrays.asList(
+                new User("Jack", 9),
+                new User("Kreas", 9),
+                new User("Marry", 13),
+                new User("Timi", 14));
+
+        Map<Integer, List<User>> map = users.stream().collect(Collectors.groupingBy(User::getAge));
+        System.out.println(map);
+        /*
+        {9=[User{name='Jack', age=9}, User{name='Kreas', age=9}],
+        13=[User{name='Marry', age=13}],
+        14=[User{name='Timi', age=14}]}
+
+         */
+    }
 }
