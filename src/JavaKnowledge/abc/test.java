@@ -11,6 +11,11 @@ public class test {
         BigDecimal two = new BigDecimal(one);
         double three = two.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
         System.out.println(three);
+
+        int a=6;
+        int c=9;
+        double b=Math.ceil((double) a/c);
+        System.out.println(b);
     }
 
 }
