@@ -21,9 +21,11 @@ public class Practice01 {
         int even = 0, odd = 0;
         String s1 = Integer.toBinaryString(n);
         //这里将二进制反转进行读取  ！！！又或者可以下面遍历时，从高位开始遍历！！————>这样的话对第几位数的判断会不准确！！
-        StringBuilder s2 = new StringBuilder();
-        s2.append(s1);
+        StringBuilder s2 = new StringBuilder();  //对于以下几步的优化，可以直接将字符串转成字符串数组，遍历时即可从后面开始取值
+        s2.append(s1);                          //以上的思路错误，转成数组后，取0索引还是从左往右的第一位，无法从最右边开始取值
         String s = s2.reverse().toString();
+
+
         int i = s.length();
 
         for (int i1 = 0; i1 < i; i1++) {
