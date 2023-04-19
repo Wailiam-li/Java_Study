@@ -1,9 +1,9 @@
 package JavaKnowledge.Map;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import org.junit.Test;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 
 public class MapStudy {
@@ -54,4 +54,94 @@ public class MapStudy {
         map.forEach((key, value) -> System.out.println(key + "--" + value));
         //注：forEach的底层源码也使用到了增强for，依次得到每一个键和值，再调用accept方法。
     }
+
+
+    @Test  //map集合根据key或value排序
+    public void mapSort() {
+        Map<String, String> map = new TreeMap<String, String>();
+
+        map.put("KFC", "kfc");
+        map.put("WNBA", "wnba");
+        map.put("NBA", "nba");
+        map.put("CBA", "cba");
+
+        Map<String, String> resultMap = sortMapByKey(map);    //按Key进行排序
+
+        for (Map.Entry<String, String> entry : resultMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public static Map<String, String> sortMapByKey(Map<String, String> map) {
+        if (map == null || map.isEmpty()) {
+            return null;
+        }
+        return map;
+    }
+
+//    @Test
+    /**
+     * 使用 Map按value进行排序
+     * @param map
+     * @return
+     */
+//    public  Map<String, String> sortMapByValue(Map<String, String> oriMap) {
+//        if (oriMap == null || oriMap.isEmpty()) {
+//            return null;
+//        }
+//        Map<String, String> sortedMap = new LinkedHashMap<>();
+//        List<Map.Entry<String, String>> entryList = new ArrayList<>(oriMap.entrySet());
+//
+////        Collections.sort(entryList, new MapValueComparator());
+//
+//        Iterator<Map.Entry<String, String>> iter = entryList.iterator();
+//
+//        Map.Entry<String, String> tmpEntry = null;
+//        while (iter.hasNext()) {
+//            tmpEntry = iter.next();
+//            sortedMap.put(tmpEntry.getKey(), tmpEntry.getValue());
+//        }
+//        return sortedMap;
+//    }
+
+    @Test
+    public  void main1() {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("赵四",23);
+        map.put("刘能",21);
+        map.put("广坤",25);
+        map.put("老七",18);
+        System.out.println(map);
+        Map<String, Integer> sortMap = sortMap(map);
+        System.out.println(sortMap);
+    }
+
+
+    public  Map<String, Integer> sortMap(Map<String, Integer> map) {
+        //利用Map的entrySet方法，转化为list进行排序
+        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(map.entrySet());
+        //利用Collections的sort方法对list排序
+        Collections.sort(entryList, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                //正序排列，倒序反过来
+                return o2.getValue() - o1.getValue();
+            }
+        });
+
+        HashMap<String, Integer> map2 = new HashMap<>();
+        map2.put("赵四",3);
+        map2.put("刘能",2);
+        map2.put("广坤",4);
+        map2.put("老七",1);
+
+
+        //遍历排序好的list，一定要放进LinkedHashMap，因为只有LinkedHashMap是根据插入顺序进行存储
+        LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<String, Integer>();
+        for (Map.Entry<String, Integer> e : entryList) {
+            linkedHashMap.put(e.getKey(), map2.get(e.getKey()));
+        }
+        return linkedHashMap;
+    }
+
 }
