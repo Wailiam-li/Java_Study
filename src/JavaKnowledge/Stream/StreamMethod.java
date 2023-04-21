@@ -67,7 +67,7 @@ public class StreamMethod {
      * map功能：对流中所有元素做统一处理---> 一般用于 1.转换流中的数据类型
      */
     @Test  // 所有元素加前缀为例：
-    public void mapConcat() {
+    public void concat() {
         List<String> list = Arrays.asList("abc", "ab", "a", "efg", "abcd");
         List<String> map = list.stream().map(str -> str.concat("_liwei")).collect(Collectors.toList());
         System.out.println(map);              //这里的.concat为用于拼接的意思
@@ -99,7 +99,7 @@ public class StreamMethod {
      * concat功能：合并a和b两个流为一个流
      */
     @Test
-    public void concat() {
+    public void streamConcat() {
         List<Integer> list1 = Arrays.asList(2, 1, 4, 3, 5, 6, 9, 7);
         List<String> list2 = Arrays.asList("666", "777", "888");
         //将两个流合并                  再输出
@@ -126,12 +126,12 @@ public class StreamMethod {
     public void toMap() {
         List<String> list = Arrays.asList("abc", "ad", "adc", "ace", "ae", "ae", "io");
         Map<String, String> collect = list.stream().collect(Collectors.toMap((v -> "prod_" + v), v -> v, (oldvaule, newvalue) -> newvalue));
-        System.out.println(collect);                                                                    //这里表示如果键和值有重复将会采用新的值
+        System.out.println(collect);                                                                    //这里表示如果键和值中的键重复，将会采用新的值还是旧的值
 
     }
 
 
-    /*
+    /*  重点：！！
      *Collectors.groupingBy根据一个或多个属性对集合中的项目进行分组
      */
     @Test
@@ -145,10 +145,10 @@ public class StreamMethod {
         Map<Integer, List<User>> map = users.stream().collect(Collectors.groupingBy(User::getAge));
         System.out.println(map);
         /*
+        结果：
         {9=[User{name='Jack', age=9}, User{name='Kreas', age=9}],
         13=[User{name='Marry', age=13}],
         14=[User{name='Timi', age=14}]}
-
          */
     }
 }

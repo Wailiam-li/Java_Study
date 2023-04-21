@@ -1,15 +1,14 @@
 package JavaKnowledge.jdbc;
 
 /*
-    关于connection的用法：1.开启事务（一块成功或失败）
+    关于connection的使用：1.开启事务（一块成功或失败）
  */
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Main2 {
+public class Connection {
     public static void main(String[] args) throws SQLException {
         //1.注册
 
@@ -17,7 +16,7 @@ public class Main2 {
         String url = "jdbc:mysql:///abc?useSSL=false&&serverTimezone=UTC";  //那么多事，靠！！
         String userName = "root";
         String password = "root";
-        Connection conn = DriverManager.getConnection(url, userName, password);
+        java.sql.Connection conn = DriverManager.getConnection(url, userName, password);
 
         String sql1 = "update user1 set password=123 where id =1";
 
