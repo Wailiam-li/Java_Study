@@ -18,18 +18,20 @@ public class Connection {
         String password = "root";
         java.sql.Connection conn = DriverManager.getConnection(url, userName, password);
 
-        String sql1 = "update user1 set password=123 where id =1";
+        String sql1 = "update user1 set password=1234 where id =1";
 
-        String sql2 = "update user1 set password=123 where id =3";
+        String sql2 = "update user1 set password=12344 where id =3";
 
         Statement stat = conn.createStatement(); //!!!获取执行sql的对象！！
 
         try {
             //事务开启
             conn.setAutoCommit(false);
-            //
+
             int coun1 = stat.executeUpdate(sql1);
             System.out.println(coun1);
+
+            int i=3/0;
 
             int coun2 = stat.executeUpdate(sql2);
             System.out.println(coun2);
