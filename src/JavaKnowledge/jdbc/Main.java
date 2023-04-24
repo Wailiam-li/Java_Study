@@ -27,7 +27,7 @@ public class Main {
         Connection conn = DriverManager.getConnection(url, userName, password);
 
         //3.定义sql语句
-        String sql = "update user1 set name='李辉' where id=3";
+        String sql = "update user1 set name_='李威' where id=2";
 
         //4.获取执行sql的对象
         Statement stm = conn.createStatement();
