@@ -11,9 +11,10 @@ public class Draft {
 
     public static void main(String[] args) {
 
-        //方法1： 1为 int 类型、0代表前面要补位的字符、2代表字符串的长度、d表示参数为整数类型
-        String s = String.format("%08d", 1);   //注：“%”后面一般表示用什么补足，一般只有用0补足，“8”表示用一共补足多少位
-        //例：这里表示用0补足8位数
+        /*方法1： String.format()方法：将整形变成 指定格式的 字符串型
+        // 1为 int 类型、0代表前面要补位的字符、2代表字符串的长度、d表示参数为整数类型   */
+        String s = String.format("%02d", 1);   //注：“%”后面一般表示用什么补足，一般只有用0补足，“2”表示用一共补足多少位
+        //例：这里表示用0补足2位数
         System.out.println(s);
 
 

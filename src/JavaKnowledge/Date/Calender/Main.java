@@ -36,7 +36,7 @@ public class Main {
 
          */
         Calendar c = Calendar.getInstance();
-        System.out.println(c);
+        System.out.println(c);    //里面包含一大堆东西：时间中的纪元，年，月，日，时，分，秒，星期
         c.setTime(new Date());
 
         //Java在Calender类中将索引对应的数字都定义成了常量；
