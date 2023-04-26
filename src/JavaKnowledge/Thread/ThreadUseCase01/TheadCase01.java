@@ -1,4 +1,4 @@
-package JavaKnowledge.Thread.ThreadCase01;
+package JavaKnowledge.Thread.ThreadUseCase01;
 
 /*
      多线程的第一种实现方式： 继承thread类

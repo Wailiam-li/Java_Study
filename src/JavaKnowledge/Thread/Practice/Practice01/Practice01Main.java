@@ -1,6 +1,7 @@
 package JavaKnowledge.Thread.Practice.Practice01;
 
 /*
+     线程安全问题练习：
      需求:
          某电影院目前正在上映国产大片，共有100张票，而它有3个窗口卖票，请设计一个程序模拟该电影院卖票
 

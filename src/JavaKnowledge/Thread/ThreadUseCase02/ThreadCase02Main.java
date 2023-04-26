@@ -1,6 +1,4 @@
-package JavaKnowledge.Thread.ThreadCase02;
-
-import JavaKnowledge.Thread.ThreadCase01.MyThread;
+package JavaKnowledge.Thread.ThreadUseCase02;
 
 public class ThreadCase02Main {
     public static void main(String[] args) {
