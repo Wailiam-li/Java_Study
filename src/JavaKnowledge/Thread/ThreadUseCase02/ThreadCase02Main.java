@@ -4,7 +4,7 @@ public class ThreadCase02Main {
     public static void main(String[] args) {
 
         //创建MyRun对象,表示多线程要执行的任务
-        MyRun mr = new MyRun();
+        MyRunnable mr = new MyRunnable();
 
         //创建线程对象
         Thread t1 = new Thread(mr);     //注：这里需要把任务放进去

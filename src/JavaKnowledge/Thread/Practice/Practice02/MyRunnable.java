@@ -2,7 +2,7 @@ package JavaKnowledge.Thread.Practice.Practice02;
 
 public class MyRunnable implements Runnable{
 
-    int i=100;
+    int i=100;   //注意：在使用Runnable接口实现多线程时，由于只创建一个MyRunnable对象，因此不加static关键字也可以
 
     @Override
     public void run() {

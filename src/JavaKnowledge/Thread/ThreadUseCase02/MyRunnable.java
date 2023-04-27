@@ -4,7 +4,7 @@ package JavaKnowledge.Thread.ThreadUseCase02;
    实现方式2：   实现Runnable接口的方式进行实现
 
  */
-public class MyRun implements Runnable{
+public class MyRunnable implements Runnable{
 
     @Override
     public void run() {
