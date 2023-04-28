@@ -41,15 +41,15 @@ public class RotateBalls01 {
                 result[i] = resultString.charAt(i);
             }
 
-        } else if (m==n){
-            for (int i = m-1; i >= 0; i--) {  //这里会出现数组越界的问题！！！
+        } else if (m == n) {
+            for (int i = 0; i < m; i++) {  //这里会出现数组越界的问题！！！
                 builder.append(balls[i]);
             }
             for (int i = 0; i < builder.length(); i++) {
-                result[i] = builder.toString().charAt(i);
+                result[i] = builder.toString().charAt(i);  //思路问题：原先想着如果m=n，进行翻转就行了，但实际情况是m=n时，不用动，直接返回原型即可！
             }
-        }else {
-            int o=n%m;
+        } else {
+            int o = n % m;
             for (int i = m - o; i < m; i++) {
                 builder.append(balls[i]);
             }
@@ -66,13 +66,15 @@ public class RotateBalls01 {
     }
 
     public static void main(String[] args) {
-        char[] m=rotate(16, "abcdesadfg397hfg".toCharArray(),37);
+        char[] m = rotate(101, "123".toCharArray(), 1366666660);
         System.out.println(m);
     }
 
     /*
         失败点：1.数组越界问题；
                2.珠子重新排的问题！！如果n>m，有可能珠子不只翻转一轮！！！要重新翻转！！
+               3.思路问题：原先想着如果m=n，进行翻转就行了，但实际情况是m=n时，不用动，直接返回原字符串即可！
+
      */
 
 }
