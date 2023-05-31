@@ -1,10 +1,8 @@
 package JavaKnowledge.abc;
 
-import JavaKnowledge.Oop.Super.Person;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Draft {
     public static void main(String[] args) throws ParseException {
@@ -25,31 +23,26 @@ public class Draft {
 //        List<String> s=new ArrayList<>();
 //        System.out.println(s.size());
 
-        Set<Long> l=new HashSet<Long>() {
-        };
+        List<String> l = new ArrayList<>();
 //        personList.add(new Person("liwei",23));
 //        personList.add(new Person("liwei",23));
 //        personList.add(new Person("lihui",28));
 
 //        personList.sort(Comparator.comparing(Person::getAge));
-         l.add(1L);
-         l.add(1L);
-         l.add(1L);
-         l.add(1L);
-        System.out.println(l);
+        l.add("111"); //0
+        l.add("222");
+        l.add("333");//2
+        l.add("4444");
+        l.remove(2);
+        l.add("333333333");
 
-        TreeMap tm=new TreeMap<>();
-        HashMap hm=new HashMap();
-        hm.put(1,"aaaa");
-        hm.put(9,"cccc");
-        hm.put(2,"cc");
-        hm.put(5,"dd");
-        hm.put(3,"dd");
-        tm.putAll(hm);
+        System.out.println(l.get(0));
+        System.out.println(l.get(1));
+        System.out.println(l.get(2));
+        System.out.println(l.get(3));
+        System.out.println(l.size());
 
-        System.out.println(tm);
     }
-
 
 
 }
