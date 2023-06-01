@@ -33,15 +33,23 @@ public class Draft {
         l.add("222");
         l.add("333");//2
         l.add("4444");
-        l.remove(2);
-        l.add("333333333");
+//        l.remove(2);
+//        l.add("333333333");
 
-        System.out.println(l.get(0));
-        System.out.println(l.get(1));
-        System.out.println(l.get(2));
-        System.out.println(l.get(3));
-        System.out.println(l.size());
+        for (int i = 0; i < l.size(); i++) {
+            if (l.get(i).equals("222")){
+                l.remove(l.get(i));
+                System.out.println(l.get(i));
+        }
+        }
 
+
+//        System.out.println(l.get(0));
+//        System.out.println(l.get(1));
+//        System.out.println(l.get(2));
+//        System.out.println(l.get(3));
+//        System.out.println(l.size());
+//        System.out.println(l);
     }
 
 
