@@ -1,7 +1,10 @@
 package JavaKnowledge.abc;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class Draft {
@@ -23,27 +26,44 @@ public class Draft {
 //        List<String> s=new ArrayList<>();
 //        System.out.println(s.size());
 
-        List<String> l = new ArrayList<>();
+        List<Date> l = new ArrayList<>();
 //        personList.add(new Person("liwei",23));
 //        personList.add(new Person("liwei",23));
 //        personList.add(new Person("lihui",28));
 
 //        personList.sort(Comparator.comparing(Person::getAge));
-        l.add("111"); //0
-        l.add("222");
-        l.add("333");//2
-        l.add("4444");
-//        l.remove(2);
-//        l.add("333333333");
+//        l.add("111"); //0
+//        l.add("222");
+//        l.add("333");//2
+//        l.add("4444");
+////        l.remove(2);
+////        l.add("333333333");
+//
+//        for (int i = 0; i < l.size(); i++) {
+//            if (l.get(i).equals("222")){
+//                l.remove(l.get(i));
+//                System.out.println(l.get(i));
+//        }
+//        }
 
-        for (int i = 0; i < l.size(); i++) {
-            if (l.get(i).equals("222")){
-                l.remove(l.get(i));
-                System.out.println(l.get(i));
-        }
-        }
+//        Date date1=new Date();
+//        System.out.println(date1.getTime()); //15:08  1685689737668
+
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        String date2="2023-06-01";
+        String date3="2023-06-02";
+        String date4="2023-06-03";
+        Date parse = sdf.parse(date2);
+        Date parse1 = sdf.parse(date3);
+        Date parse2 = sdf.parse(date4);
+        l.add(parse1);
+        l.add(parse2);
+        l.add(parse);
+        Collections.sort(l,(o1, o2) -> o2.compareTo(o1));
+        System.out.println(l);
 
 
+//        System.out.println(date2);
 //        System.out.println(l.get(0));
 //        System.out.println(l.get(1));
 //        System.out.println(l.get(2));
