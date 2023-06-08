@@ -1,7 +1,10 @@
 package JavaKnowledge.abc;
 
+import org.junit.Test;
+
 public class test {
     public static void main(String[] args) {
+    }
         /*
          四舍五入保留两位用法
          */
@@ -27,6 +30,16 @@ public class test {
 //        String date1 = new String("2023-05-23");
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-    }
+        @Test
+        public void test1(){
+            if (true && false){
+                System.out.println(1);
+            }else {
+                System.out.println(2);
+
+            }
+        }
+
+
 
 }
