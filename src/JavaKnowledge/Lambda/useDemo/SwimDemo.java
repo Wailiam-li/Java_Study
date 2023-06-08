@@ -25,6 +25,12 @@ public class SwimDemo {
         );
 
         //以上是没有参数的，有参数和return的可以省略更多！
+
+
+        //最简
+        method(() -> System.out.println("小狗在游泳！"));  //问：为什么接口是要写在下面？——>也可以写在定义接口中
+
+
     }
 
 
