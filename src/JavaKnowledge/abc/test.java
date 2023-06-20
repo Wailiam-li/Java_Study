@@ -2,6 +2,8 @@ package JavaKnowledge.abc;
 
 import org.junit.Test;
 
+import java.util.*;
+
 public class test {
     public static void main(String[] args) {
     }
@@ -30,15 +32,36 @@ public class test {
 //        String date1 = new String("2023-05-23");
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-        @Test
-        public void test1(){
-            if (true && false){
-                System.out.println(1);
-            }else {
-                System.out.println(2);
+    @Test
+    public void test1() {
+        if (true && false) {
+            System.out.println(1);
+        } else {
+            System.out.println(2);
 
-            }
         }
+    }
+
+    @Test
+    public void test(){
+
+        List<Integer> list1 = Arrays.asList(1, 2, 3);
+        List<Integer> list2 = Arrays.asList(3,4,5);
+
+//        Collection union = CollectionUtils.union(list1, list2);
+        System.out.println("unionTest1 并集 :" + list1);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
