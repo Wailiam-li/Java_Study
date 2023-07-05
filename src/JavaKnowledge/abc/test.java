@@ -82,14 +82,15 @@ public class test {
     @Test
     public void test04() {
         String str = "i love 791202";
-        System.out.println(str.substring(str.length() - 6)); // 791202
+        System.out.println(str.substring(str.length() - 6)); //
+        System.out.println(str.charAt(-1)); //
     }
 
     @Test
     public void test05() {
         String str = "111111111a";
         if (str.matches("\\d{9,10}") == false) {
-            System.out.println("输入有误"); // 791202
+            System.out.println("输入有误");
         }else{
             System.out.println("无误");
         }
@@ -114,6 +115,28 @@ public class test {
             System.out.println("数字不能全部一样");
         }else{
             System.out.println("无误");
+        }
+    }
+
+    @Test
+    public void test08() {
+        int a=1;
+        int b=1;
+        int c=2;
+        if (a==b||b==c) {
+            System.out.println("数字一样");
+        }else{
+            System.out.println("不一样");
+        }
+    }
+
+    @Test
+    public void test09() {
+        String a="啊实打实大庆基地abc到底是在哪";
+        if (a.contains("大庆基地")) {
+            System.out.println("数字一样");
+        }else{
+            System.out.println("不一样");
         }
     }
 }
