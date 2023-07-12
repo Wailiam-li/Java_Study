@@ -3,6 +3,7 @@ package JavaKnowledge.abc;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class test {
@@ -65,16 +66,16 @@ public class test {
 
     @Test
     public void test02() {
-      String a="XXXX支行";
-      if ('1'=='1' && a.charAt(0)==a.charAt(1)&&a.charAt(1)==a.charAt(2)){
-          System.out.println("true");
-      }
+        String a = "XXXX支行";
+        if ('1' == '1' && a.charAt(0) == a.charAt(1) && a.charAt(1) == a.charAt(2)) {
+            System.out.println("true");
+        }
     }
 
     @Test
     public void test03() {
-        String a="XXXX支行";
-        if ('1'=='1' && a.substring(a.length()-2).equals("支行")){
+        String a = "XXXX支行";
+        if ('1' == '1' && a.substring(a.length() - 2).equals("支行")) {
             System.out.println("true");
         }
     }
@@ -91,7 +92,7 @@ public class test {
         String str = "111111111a";
         if (str.matches("\\d{9,10}") == false) {
             System.out.println("输入有误");
-        }else{
+        } else {
             System.out.println("无误");
         }
     }
@@ -99,10 +100,10 @@ public class test {
     @Test
     public void test06() {
         String str = "ssss分行";
-        if (!str.substring(str.length()-2).equals("支行")&&
-                !str.substring(str.length()-2).equals("分行")) {
+        if (!str.substring(str.length() - 2).equals("支行") &&
+                !str.substring(str.length() - 2).equals("分行")) {
             System.out.println("输入有误");
-        }else{
+        } else {
             System.out.println("无误");
         }
     }
@@ -110,34 +111,68 @@ public class test {
     @Test
     public void test07() {
         String str = "1111";
-        if ('a'=='a'&&(str.charAt(0)==str.charAt(1)&&str.charAt(2)==str.charAt(1)
-        &&str.charAt(2)==str.charAt(3))) {
+        if ('a' == 'a' && (str.charAt(0) == str.charAt(1) && str.charAt(2) == str.charAt(1)
+                && str.charAt(2) == str.charAt(3))) {
             System.out.println("数字不能全部一样");
-        }else{
+        } else {
             System.out.println("无误");
         }
     }
 
     @Test
     public void test08() {
-        int a=1;
-        int b=1;
-        int c=2;
-        if (a==b||b==c) {
+        int a = 1;
+        int b = 1;
+        int c = 2;
+        if (a == b || b == c) {
             System.out.println("数字一样");
-        }else{
+        } else {
             System.out.println("不一样");
         }
     }
 
     @Test
     public void test09() {
-        String a="啊实打实大庆基地abc到底是在哪";
+        String a = "啊实打实大庆基地abc到底是在哪";
         if (a.contains("大庆基地")) {
             System.out.println("数字一样");
-        }else{
+        } else {
             System.out.println("不一样");
         }
+    }
+
+    @Test
+    public void test10() {
+        Date date = new Date();
+        Date firstDayOfWeek = getFirstDayOfWeek(date);
+        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = sdf.format(firstDayOfWeek);
+        String s = format.split("-")[0];
+        System.out.println(format);
+        System.out.println(s);
+    }
+
+    private Date getFirstDayOfWeek(Date day) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar c = Calendar.getInstance();
+        c.setTime(day);
+        c.setFirstDayOfWeek(Calendar.FRIDAY);
+        int dayWeek = c.get(Calendar.DAY_OF_WEEK);
+        if (dayWeek == 6) {
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            if (hour >= 16) {
+                dayWeek = -1;
+            }
+        }
+        if (dayWeek == 7) {
+            dayWeek = 0;
+        }
+        c.add(Calendar.DATE, -dayWeek - 8);
+        c.set(Calendar.HOUR_OF_DAY, 16);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return c.getTime();
     }
 }
 

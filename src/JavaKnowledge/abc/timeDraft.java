@@ -85,13 +85,17 @@ public class timeDraft {
 
         Calendar c = Calendar.getInstance();
         c.setTime(new Date()); // 将传进来的时间
-        c.setFirstDayOfWeek(Calendar.MONDAY);
-
+//      在时间上的加减用add（）！！！
+        c.add(Calendar.YEAR, -1);
 
         String startDate = sdf.format(c.getTime());
         System.out.println(startDate);
 
     }
 
+    @Test
+    public void test01() {
 
+
+    }
 }
