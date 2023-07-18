@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /*
- *   集合的工具类：Collections
+ *   演示 集合的工具类：Collections的使用方法：
+ *               例：.addAll() 、 .shuffle()方法
  */
 public class Main {
     public static void main(String[] args) {

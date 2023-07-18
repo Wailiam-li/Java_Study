@@ -2,7 +2,7 @@ package JavaKnowledge.Lambda;
 
 
 /*
-      演示集合中常用的lambda表达式
+      演示集合中常用 流 配合 lambda表达式 的使用
  */
 
 import JavaKnowledge.Lambda.entity.Book;
@@ -16,13 +16,18 @@ public class Main {
 
     List<String> fruit = Arrays.asList("apple", "banana", "orange");
 
-
+/*
+      foreach使用
+ */
     @Test    //目前使用到比较多的就是循环输出
     public void foreach() {
         fruit.forEach(l -> System.out.println(l));
 
     }
 
+    /*
+         排序中sorted方法使用到的 lambda表达式
+     */
     @Test
     public void collectionsSort() {  //注：此排序对数字（int/long/...  BigDecimal）、时间（date）、字母（字典顺序）类型都可以比较
         //正序
@@ -45,6 +50,9 @@ public class Main {
         System.out.println(decimals);
     }
 
+    /*
+      foreach使用演示案例
+   */
     @Test
     public void collectorsGroupingBy() {
         Book book1 = new Book("小人书", new BigDecimal("20"), "李三", 100);

@@ -4,14 +4,12 @@ import JavaKnowledge.Stream.entity.User;
 import org.junit.Test;
 
 import java.text.ParseException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /*
- *   流中的主要使用方法     注:由于使用到org.junit,所以要导入相应的
+ *   演示 Stream流中的主要使用方法               注:由于使用到org.junit,所以要导入相应的
  */
 public class StreamMethod {
 
@@ -86,6 +84,8 @@ public class StreamMethod {
 
     /*
      * sorted功能：对流中所有元素做排序处理，默认是对字母字符串是字典排序、对数字是升序排序；
+                 *使用细节：1.如果是针对某个对象中的某项属性排序，需要使用Comparator.comparing(User::getAge)；如果是
+                            直接根据该集合的该项属性，直接用.sorted()方法即可；
      */
     @Test
     public void sorted() {
@@ -93,6 +93,16 @@ public class StreamMethod {
         //或用：str -> String.valueOf(str)
         List<Integer> map = list.stream().sorted().collect(Collectors.toList());
         System.out.println(map);
+    }
+
+    @Test
+    public void sorted01() {
+        List<JavaKnowledge.Stream.entity.User> list = new ArrayList<>();
+        list.add(new JavaKnowledge.Stream.entity.User("liwei", 23));
+        list.add(new JavaKnowledge.Stream.entity.User("lisi", 20));
+        list.add(new JavaKnowledge.Stream.entity.User("lihui", 21));
+        List<User> collect = list.stream().sorted(Comparator.comparing(User::getAge).reversed()).collect(Collectors.toList());
+        System.out.println(collect);
     }
 
     /*
@@ -108,7 +118,6 @@ public class StreamMethod {
     }
 
     //以下是终止操作符!!!!!!!!!!!!
-
     /*
      * forEach功能：循环遍历
      */
@@ -135,7 +144,7 @@ public class StreamMethod {
      *Collectors.groupingBy根据一个或多个属性对集合中的项目进行分组
      */
     @Test
-    public static void main(String[] args) throws ParseException {
+    public void groupBy() throws ParseException {
         List<User> users = Arrays.asList(
                 new User("Jack", 9),
                 new User("Kreas", 9),

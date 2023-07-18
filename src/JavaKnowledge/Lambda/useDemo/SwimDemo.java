@@ -1,5 +1,9 @@
 package JavaKnowledge.Lambda.useDemo;
 
+
+/*
+    演示lambda表达式的由来及基本使用
+ */
 public class SwimDemo {
     public static void main(String[] args) {
 
@@ -38,7 +42,7 @@ public class SwimDemo {
         s.swimming();
     }
 
-//    interface Swimming {  //注：接口后面没有‘（）’！！
+//     注：接口 Swimming  后面没有‘（）’！！
 //        public abstract void swimming();
 //    }
 
