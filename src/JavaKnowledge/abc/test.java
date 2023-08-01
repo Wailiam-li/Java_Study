@@ -1,12 +1,13 @@
 package JavaKnowledge.abc;
 
-import JavaKnowledge.Stream.entity.User;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class test {
     public static void main(String[] args) {
@@ -147,7 +148,7 @@ public class test {
     public void test10() {
         Date date = new Date();
         Date firstDayOfWeek = getFirstDayOfWeek(date);
-        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = sdf.format(firstDayOfWeek);
         String s = format.split("-")[0];
         System.out.println(format);
@@ -178,7 +179,14 @@ public class test {
     }
 
 
-
+    @Test
+    public void test11() {
+        List<Integer> list = Arrays.asList(5, 3, 1);
+        list.add(6);
+        list.add(0, 4);   //注意：add后填两个参数时，第一个参数时索引位置的意思！！！！
+        list.remove(1);
+        System.out.println(list);
+    }
 
 }
 
