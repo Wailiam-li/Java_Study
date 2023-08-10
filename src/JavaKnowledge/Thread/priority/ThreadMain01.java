@@ -1,7 +1,10 @@
-package JavaKnowledge.Thread;
+package JavaKnowledge.Thread.priority;
+
+import JavaKnowledge.Thread.MyThread;
 
 /*
-      优先级的使用
+      演示优先级的使用：
+              Priority：优先级
  */
 public class ThreadMain01 {
 

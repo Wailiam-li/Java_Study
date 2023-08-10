@@ -4,10 +4,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class test {
     public static void main(String[] args) {
@@ -185,6 +182,24 @@ public class test {
         list.add(6);
         list.add(0, 4);   //注意：add后填两个参数时，第一个参数时索引位置的意思！！！！
         list.remove(1);
+        System.out.println(list);
+    }
+
+    @Test
+    public void test12() {
+        Set<Integer> set = new HashSet<>();
+        set.add(6);
+        set.add(0);   //注意：add后填两个参数时，第一个参数时索引位置的意思！！！！
+        set.add(0);
+//        set.remove(1);
+        System.out.println(set);
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(3);
+
+        list.add(1);
+
         System.out.println(list);
     }
 

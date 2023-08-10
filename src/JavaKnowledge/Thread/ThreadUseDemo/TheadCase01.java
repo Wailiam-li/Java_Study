@@ -1,7 +1,7 @@
-package JavaKnowledge.Thread.ThreadUseCase01;
+package JavaKnowledge.Thread.ThreadUseDemo;
 
 /*
-     多线程的第一种实现方式： 继承thread类
+     演示多线程的第一种实现方式： 继承thread类
             启动方式:
                 1．自己定义一个类继承Thread
                 2．重写run方法
