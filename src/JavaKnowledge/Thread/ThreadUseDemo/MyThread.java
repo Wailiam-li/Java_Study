@@ -1,4 +1,4 @@
-package JavaKnowledge.Thread.ThreadUseCase01;
+package JavaKnowledge.Thread.ThreadUseDemo;
 
 
 public class MyThread extends Thread {

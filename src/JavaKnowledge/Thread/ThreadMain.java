@@ -7,6 +7,18 @@ package JavaKnowledge.Thread;
 public class ThreadMain {
     public static void main(String[] args) throws InterruptedException {
         /*
+             多线程对的创建步骤：
+
+                 第一种启动方式：继承Thread
+                    1.自己定义一个类继承Thread
+                    2．重写run方法（重要点！！）
+                    3．创建子类的对象，并启动线程
+
+         */
+
+
+
+        /*
         常用的成员变量方法：
                   String getName()     //返回线程的名称
                   void setName()      //设置线程的名字

@@ -1,4 +1,4 @@
-package JavaKnowledge.Thread.ThreadUseCase02;
+package JavaKnowledge.Thread.RunnableUseDemo;
 
 public class ThreadCase02Main {
     public static void main(String[] args) {
