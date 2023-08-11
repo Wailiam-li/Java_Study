@@ -1,4 +1,4 @@
-package JavaKnowledge.Z_Practice;
+package JavaKnowledge.Z_comprehensive_Prac;
 
 /*
     吃葡萄问题:

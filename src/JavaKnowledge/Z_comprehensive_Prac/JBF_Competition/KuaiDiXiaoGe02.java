@@ -1,4 +1,4 @@
-package JavaKnowledge.Z_Practice.JBF_Competition;
+package JavaKnowledge.Z_comprehensive_Prac.JBF_Competition;
 
 /*
    快递小哥：

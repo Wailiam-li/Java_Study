@@ -1,4 +1,4 @@
-package JavaKnowledge.Z_Practice;
+package JavaKnowledge.Z_comprehensive_Prac;
 
 /*
     给你一个下标从 0 开始的整数数组 nums 。如果下标对 i、j 满足 0 ≤ i < j < nums.length ，如果 nums[i] 的 第一个数字

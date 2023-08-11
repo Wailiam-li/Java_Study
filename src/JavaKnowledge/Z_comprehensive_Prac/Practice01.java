@@ -1,4 +1,4 @@
-package JavaKnowledge.Z_Practice;
+package JavaKnowledge.Z_comprehensive_Prac;
 /*
 给你一个正整数n。
     用even表示在n的二进制形式(下标从О开始)中值为1的偶数下标的个数。
