@@ -4,10 +4,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class test {
     public static void main(String[] args) {
@@ -186,6 +183,28 @@ public class test {
         list.add(0, 4);   //注意：add后填两个参数时，第一个参数时索引位置的意思！！！！
         list.remove(1);
         System.out.println(list);
+    }
+
+    @Test
+    public void test012() {
+     Per p1=new Per("lili",21);
+     Per p2=new Per("lilo",23);
+     List<Per> list=new ArrayList<>();
+     list.add(p1); list.add(p2);
+     list.stream().max(Comparator.comparing(x->x.getAge())).ifPresent(
+             r->{
+                 if (r==null){
+                     System.out.println(1);
+                 }else if(r.getAge()==23){
+                     System.out.println("right!");
+                 }else {
+                     System.out.println("false");
+                 }
+
+             }
+
+     );
+
     }
 
 }

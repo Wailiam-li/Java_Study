@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /*
@@ -46,14 +47,14 @@ public class Main {
         long l = now - oneYearAgo;
         System.out.println(l);
 
-        long l1 = l / (365*24 * 60 * 60 * 1000L);
+        long l1 = l / (365 * 24 * 60 * 60 * 1000L);
 
         if (l1 > 1L) {
             System.out.println("时间是：" + l1);
         }
 
     }
-    
+
     @Test
     public void test02() {
         //测试&&  和  || 的联合使用
@@ -68,14 +69,54 @@ public class Main {
 
     @Test
     public void test03() {
-        //测试&&  和  || 的联合使用
-        if (1 == 3 || 1 == 2 && 3 == 3) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
-
+        //获取某天所在周的上周的第一天（上周五下午四点的日期）
+        Date firstDayOfLastWeek = getFirstDayOfLastWeek(new Date());
+        System.out.println(firstDayOfLastWeek);
     }
+
+    private Date getFirstDayOfLastWeek(Date day) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar c = Calendar.getInstance();
+        c.setTime(day);
+//        c.setFirstDayOfWeek(Calendar.FRIDAY);  //setFirstDayOfWeek的作用是设置
+        int dayWeek = c.get(Calendar.DAY_OF_WEEK);//关键点在这里，求出当前是一周中的第几天，再减去这数就一定得到上周最后一天的日期（周六），再减一就得到周五；
+        if (dayWeek == 6) {
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            if (hour >= 16) {
+                dayWeek = -1;
+            }
+        }
+        if (dayWeek == 7) {
+            dayWeek = 0;
+        }
+        c.add(Calendar.DATE, -dayWeek - 1);
+        c.set(Calendar.HOUR_OF_DAY, 16);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return c.getTime();
+    }
+
+
+    @Test   //关于setFirstDayOfWeek()的使用
+    public void test04() {
+        Calendar calndr = Calendar.getInstance();
+
+        // Displaying first day of the week
+        int first_day = calndr.getFirstDayOfWeek();
+        System.out.println("The Current"
+                + " First day of the week: "
+                + first_day);
+
+        calndr.setFirstDayOfWeek(Calendar.THURSDAY);
+
+        first_day = calndr.getFirstDayOfWeek();
+        System.out.println("The new first"
+                + " day of the week: "
+                + first_day);
+    }
+
+
 }
 
 
