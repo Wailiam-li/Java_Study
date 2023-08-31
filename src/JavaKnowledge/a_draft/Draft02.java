@@ -1,5 +1,7 @@
 package JavaKnowledge.a_draft;
 
+import java.util.UUID;
+
 /**
  * ClassName:Draft02
  * Description:
@@ -11,13 +13,10 @@ public class Draft02 {
 
     public static void main(String[] args) {
 
-
-        String a = "李威";
-        String b = "威";
-        String c = "李";
-
-        char[] chars = a.toCharArray();
-
+        String a = UUID.randomUUID().toString();//作用是：可生成除 “-” 外的一个32位的字符串
+        System.out.println(a);
+        String s = a.replaceAll("-", "");
+        System.out.println(s);
 
     }
 }
