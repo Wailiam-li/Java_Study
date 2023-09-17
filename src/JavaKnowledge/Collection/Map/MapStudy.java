@@ -1,4 +1,4 @@
-package JavaKnowledge.Map;
+package JavaKnowledge.Collection.Map;
 
 
 import org.junit.Test;
@@ -80,8 +80,10 @@ public class MapStudy {
     }
 
 //    @Test
+
     /**
      * 使用 Map按value进行排序
+     *
      * @param map
      * @return
      */
@@ -103,21 +105,20 @@ public class MapStudy {
 //        }
 //        return sortedMap;
 //    }
-
     @Test
-    public  void main1() {
+    public void main1() {
         HashMap<String, Integer> map = new HashMap<>();
-        map.put("赵四",23);
-        map.put("刘能",21);
-        map.put("广坤",25);
-        map.put("老七",18);
+        map.put("赵四", 23);
+        map.put("刘能", 21);
+        map.put("广坤", 25);
+        map.put("老七", 18);
         System.out.println(map);
         Map<String, Integer> sortMap = sortMap(map);
         System.out.println(sortMap);
     }
 
 
-    public  Map<String, Integer> sortMap(Map<String, Integer> map) {
+    public Map<String, Integer> sortMap(Map<String, Integer> map) {
         //利用Map的entrySet方法，转化为list进行排序
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>(map.entrySet());
         //利用Collections的sort方法对list排序
@@ -130,10 +131,10 @@ public class MapStudy {
         });
 
         HashMap<String, Integer> map2 = new HashMap<>();
-        map2.put("赵四",3);
-        map2.put("刘能",2);
-        map2.put("广坤",4);
-        map2.put("老七",1);
+        map2.put("赵四", 3);
+        map2.put("刘能", 2);
+        map2.put("广坤", 4);
+        map2.put("老七", 1);
 
 
         //遍历排序好的list，一定要放进LinkedHashMap，因为只有LinkedHashMap是根据插入顺序进行存储

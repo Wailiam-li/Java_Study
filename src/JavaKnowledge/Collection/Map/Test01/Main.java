@@ -1,4 +1,4 @@
-package JavaKnowledge.Map.Test01;
+package JavaKnowledge.Collection.Map.Test01;
 
 import java.util.HashMap;
 import java.util.Map;

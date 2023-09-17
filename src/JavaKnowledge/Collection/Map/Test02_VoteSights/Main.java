@@ -1,4 +1,4 @@
-package JavaKnowledge.Map.Test02_VoteSights;
+package JavaKnowledge.Collection.Map.Test02_VoteSights;
 
 import java.util.*;
 

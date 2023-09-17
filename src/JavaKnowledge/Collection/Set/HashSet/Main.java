@@ -1,7 +1,7 @@
-package JavaKnowledge.Set.HashSet;
+package JavaKnowledge.Collection.Set.HashSet;
 
 
-import JavaKnowledge.Map.Test01.Student;
+import JavaKnowledge.Collection.Map.Test01.Student;
 
 /*
     演示hashCode相关的代码

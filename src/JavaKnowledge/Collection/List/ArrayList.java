@@ -1,4 +1,4 @@
-package JavaKnowledge;
+package JavaKnowledge.Collection.List;
 
 import org.junit.Test;
 
@@ -14,12 +14,10 @@ public class ArrayList {
         演示泛型 为String类型,直接利用Arrays.asList() 的初始化
      */
     @Test
-    public void init(){
-        List<String> list = Arrays.asList("a","b","c");
+    public void init() {
+        List<String> list = Arrays.asList("a", "b", "c");
         System.out.println(list);
     }
-
-
 
 
 }

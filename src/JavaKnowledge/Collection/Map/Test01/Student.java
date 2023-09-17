@@ -1,4 +1,4 @@
-package JavaKnowledge.Map.Test01;
+package JavaKnowledge.Collection.Map.Test01;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package JavaKnowledge.Map.Test03_ProvinceAndCity;
+package JavaKnowledge.Collection.Map.Test03_ProvinceAndCity;
 
 import java.util.*;
 
