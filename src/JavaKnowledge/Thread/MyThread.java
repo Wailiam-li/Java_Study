@@ -15,6 +15,7 @@ public class MyThread extends Thread {
     public MyThread() {
     }
 
+    //因为子类无法继承父类的构造方法，因此这里利用super关键字调用父类（Thread）的构造
     public MyThread(String name) {
         super(name);
     }

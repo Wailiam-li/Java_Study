@@ -12,7 +12,7 @@ public class MyRunnable implements Runnable {
             //获取到 当前线程的对象
             Thread t = Thread.currentThread();   //Thread.currentThread()方法！！作用是：获取当前线程对象
             System.out.println(t.getName() + "helloWorld!");
-            //上两行可写成：System.out.println(Thread.currentThread().getName()+"helloWorld!");
+            //上两行可写成：System.out.println(Thread.currentThread().getName()+"helloWorld!");  //称为链式编程
 
         }
 
