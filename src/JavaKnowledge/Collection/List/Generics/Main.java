@@ -3,6 +3,8 @@ package JavaKnowledge.Collection.List.Generics;
 /**
  * @Date:2023/9/17 17:23
  * <p>
+ * Generics：泛型
+ * <p>
  * 演示   自定义的泛型及使用
  */
 public class Main {
