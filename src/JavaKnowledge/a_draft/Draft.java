@@ -1,5 +1,7 @@
 package JavaKnowledge.a_draft;
 
+import org.junit.Test;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -70,6 +72,27 @@ public class Draft {
 //        System.out.println(l.get(3));
 //        System.out.println(l.size());
 //        System.out.println(l);
+    }
+
+
+    @Test
+    public void test(){
+        String a="abcd";
+        String substring = a.substring(1);  //表示从第几个开始检索
+        System.out.println(substring);
+
+    }
+
+    @Test
+    public void test01(){
+        List<Integer> list=new ArrayList();
+        list.add(1);
+        ArrayList list1=null;
+        //从此处看出，条件语句中的“||”并不是全部都判断，而是判断到一个符合就不往下判断了；而“&&”是都判断的
+        if (list1==null && list1.isEmpty()){
+            System.out.println("66666");
+        }
+
     }
 
 
