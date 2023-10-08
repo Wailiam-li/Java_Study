@@ -16,13 +16,13 @@ public class MyArrayList<E> {
 
 
     //集合的添加(add)方法
-    public boolean add(E e) {   //这里为什么用public
+    public boolean add(E e) {   //这里为什么用public？
         objects[size] = e;
         size++; //!
         return true;
     }
 
-    //集合的获取元素（get）方法
+    //集合的获取元素（get）方法   注：下面的E不用<>包起来 是因为E 在开始的类中 已定义
     public E get(int index) {
         return (E) objects[index];
     }
