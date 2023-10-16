@@ -89,11 +89,15 @@ public class Draft {
         list.add(1);
         ArrayList list1=null;
         //从此处看出，条件语句中的“||”并不是全部都判断，而是判断到一个符合就不往下判断了；而“&&”是都判断的
-        if (list1==null && list1.isEmpty()){
+        if (list1==null || list1.isEmpty()){
             System.out.println("66666");
         }
 
     }
 
+    @Test
+    public void test02(){
+
+    }
 
 }
