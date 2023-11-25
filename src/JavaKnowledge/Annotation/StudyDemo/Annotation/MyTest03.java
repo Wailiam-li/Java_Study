@@ -1,7 +1,7 @@
 package JavaKnowledge.Annotation.StudyDemo.Annotation;
 
 /*
-    两个元注解的演示使用：@Target    @Retention
+    两个元注解的演示使用：@Target：表示作用的地方（方法、类...）    @Retention：表示作用的时间（源码阶段、编译阶段、运行阶段）
 
  */
 
@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
                             LOCAL_ VARIABLE,局部变量
  */
 
-@Target({ElementType.TYPE,ElementType.METHOD})    //表示MyTest03注解只能在类、方法上使用
+@Target({ElementType.TYPE, ElementType.METHOD})    //表示MyTest03注解只能在类、方法上使用
 @Retention(RetentionPolicy.RUNTIME)              //表示一直保留到运行时
 public @interface MyTest03 {
 }
