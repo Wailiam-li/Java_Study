@@ -34,7 +34,7 @@ public class GetAnotationTest {
         Class aClass = Class.forName("JavaKnowledge.Annotation.annotationAnalysis.AnnotationUse");
         Method[] declaredMethods = aClass.getDeclaredMethods();
         for (Method declaredMethod : declaredMethods) {
-            declaredMethod.setAccessible(true);
+            declaredMethod.setAccessible(true); //表示禁止检查控制访问权限（又称 暴力反射）；表示临时取消 访问修饰符的权限校验
             Annotation[] declaredAnnotations = declaredMethod.getDeclaredAnnotations();
             //这里为什么没有获取到@MyTest02注解呢？？？？
             //   —————>很有可能是因为时效的问题，默认是到 CLASS (默认值)：字节码文件后就失效了！！
