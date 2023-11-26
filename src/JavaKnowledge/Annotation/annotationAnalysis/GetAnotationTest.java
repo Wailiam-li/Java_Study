@@ -1,4 +1,4 @@
-package JavaKnowledge.Annotation.Practice;
+package JavaKnowledge.Annotation.annotationAnalysis;
 
 /*
     演示 注解的解析。
@@ -16,14 +16,14 @@ public class GetAnotationTest {
 
     @Test    //解析类中的注解
     public void parseClass() throws ClassNotFoundException {
-        Class aClass = Class.forName("JavaKnowledge.Annotation.Practice.AnnotationUse");
+        Class aClass = Class.forName("JavaKnowledge.Annotation.annotationAnalysis.AnnotationUse");
         //获取更具体的值
         if (aClass.isAnnotationPresent(MyTest04.class)) {
             MyTest04 myTest04 = (MyTest04) aClass.getAnnotation(MyTest04.class);
             //注：要获取到值 必须进行注解类型的强转，转成MyTest04类型
             System.out.println(myTest04);
             System.out.println(myTest04.value());
-            System.out.println(Arrays.toString(myTest04.bbb()));
+            System.out.println(Arrays.toString(myTest04.bbb())); //这里使用toString（）方法是为了获取到值，而非地址值。
         }
 
     }
@@ -31,7 +31,7 @@ public class GetAnotationTest {
 
     @Test    //解析方法中的注解
     public void parseMehtod() throws ClassNotFoundException {
-        Class aClass = Class.forName("JavaKnowledge.Annotation.Practice.AnnotationUse");
+        Class aClass = Class.forName("JavaKnowledge.Annotation.annotationAnalysis.AnnotationUse");
         Method[] declaredMethods = aClass.getDeclaredMethods();
         for (Method declaredMethod : declaredMethods) {
             declaredMethod.setAccessible(true);
@@ -44,9 +44,9 @@ public class GetAnotationTest {
         }
     }
 
-    @Test    //解析类中的注解
+    @Test    //解析方法中的注解
     public void parseMethod02() throws ClassNotFoundException, NoSuchMethodException {
-        Class aClass = Class.forName("JavaKnowledge.Annotation.Practice.AnnotationUse");
+        Class aClass = Class.forName("JavaKnowledge.Annotation.annotationAnalysis.AnnotationUse");
 
         Method test02 = aClass.getMethod("test02");
         //获取更具体的值
