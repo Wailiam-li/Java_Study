@@ -1,5 +1,8 @@
-package JavaKnowledge.Reflection.UseDemo;
+package JavaKnowledge.Reflection.netDemo;
 
+/*
+         网上copy，仅供参考
+ */
 public class Demo3 {
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, NoSuchFieldException {
         // 获得Class对象

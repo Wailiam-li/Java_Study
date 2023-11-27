@@ -45,7 +45,7 @@ public class Main {
     */
 
     @Test       //用了junit 4.8.2的jar包 才成功!!  更换junit 版本：junit4 刚开始用的junit-4.12.jar版本，但是报了以上错误，换成了其他版本junit-4.8.2.jar，测试成功
-    //获取公共的所有构造参数
+    //获取 公共的  所有构造参数
     public void getConstrustors() throws ClassNotFoundException {
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Constructor[] constructors = clazz.getConstructors();
@@ -63,14 +63,16 @@ public class Main {
         }
     }
 
-    @Test     //获取单个构造参数    //可以利用构造方法创建对象
+    @Test     //获取(特定的)单个构造参数    //可以利用构造方法创建对象
     public void getDeclaredConstrustor() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Class clazz = Class.forName("JavaKnowledge.Reflection.entity.Person");
         Constructor c = clazz.getDeclaredConstructor(String.class, int.class);
         //知识：这里的Declared获取所有权限的构造函数 只用于查看，要想使用来创建对象，还得加
         //这里需要与构造参数的类型对应上,例是:String name,就传String.class
-        c.setAccessible(true);  //暴力反射：表示临时取消权限的校验
-        Person lw = (Person) c.newInstance("李威", 17);
+        c.setAccessible(true);  //表示禁止检查控制访问权限（又称 暴力反射）；表示临时取消 访问修饰符的权限校验
+        Person lw = (Person) c.newInstance("李威", 18);
+        //注：newInstance()意为直接利用构造器创建对象，但返回方法是Object类型，因此需要强转；
+        //  方法原型： public T newInstance(Object ... initargs)
         System.out.println(lw);
 
     }
@@ -92,7 +94,7 @@ public class Main {
             System.out.println("字段名:" + d.getName());
 
             //获取成员变量的值：要在前面先赋值，后获取
-            d.setAccessible(true);
+            d.setAccessible(true); //表示禁止检查控制访问权限（又称 暴力反射）；表示临时取消 访问修饰符的权限校验
             Object o = d.get(person);
             System.out.println("成员变量的值:" + o);
 

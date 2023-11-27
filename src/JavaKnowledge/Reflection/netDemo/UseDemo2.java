@@ -1,7 +1,10 @@
-package JavaKnowledge.Reflection.UseDemo;
+package JavaKnowledge.Reflection.netDemo;
 
 import java.lang.annotation.ElementType;
 
+/*
+         网上copy，仅供参考
+ */
 public class UseDemo2 {
     public static void main(String[] args) {
         Class c1 = Object.class;    // 类
