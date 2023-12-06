@@ -2,6 +2,7 @@ package JavaKnowledge.a_draft;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
@@ -44,4 +45,10 @@ public class Draft02 {
         System.out.println(lengthOfYear);
     }
 
+    @Test
+    public void test02() {
+        BigDecimal d=new BigDecimal("17.9444");
+        int i = d.intValue();
+        System.out.println(i);
+    }
 }

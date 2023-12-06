@@ -4,10 +4,8 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Draft {
     public static void main(String[] args) throws ParseException {
@@ -51,17 +49,17 @@ public class Draft {
 //        Date date1=new Date();
 //        System.out.println(date1.getTime()); //15:08  1685689737668
 
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        String date2="2023-06-01";
-        String date3="2023-06-02";
-        String date4="2023-06-03";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date2 = "2023-06-01";
+        String date3 = "2023-06-02";
+        String date4 = "2023-06-03";
         Date parse = sdf.parse(date2);
         Date parse1 = sdf.parse(date3);
         Date parse2 = sdf.parse(date4);
         l.add(parse1);
         l.add(parse2);
         l.add(parse);
-        Collections.sort(l,(o1, o2) -> o2.compareTo(o1));
+        Collections.sort(l, (o1, o2) -> o2.compareTo(o1));
         System.out.println(l);
 
 
@@ -76,28 +74,37 @@ public class Draft {
 
 
     @Test
-    public void test(){
-        String a="abcd";
+    public void test() {
+        String a = "abcd";
         String substring = a.substring(1);  //表示从第几个开始检索
         System.out.println(substring);
 
     }
 
     @Test
-    public void test01(){
-        List<Integer> list=new ArrayList();
+    public void test01() {
+        List<Integer> list = new ArrayList();
         list.add(1);
-        ArrayList list1=null;
+        ArrayList list1 = null;
         //从此处看出，条件语句中的“||”并不是全部都判断，而是判断到一个符合就不往下判断了；而“&&”是都判断的
-        if (list1==null || list1.isEmpty()){
+        if (list1 == null || list1.isEmpty()) {
             System.out.println("66666");
         }
 
     }
 
     @Test
-    public void test02(){
-
+    public void test02() {
+        List<Per1> list = Arrays.asList(new Per1("1", "liwei", 23),
+                new Per1("1", "lisan", 22),
+                new Per1("1", "lisi", 22),
+                new Per1("2", "lihui", 23),
+                new Per1("2", "lihui2", 19),
+                new Per1("1", "lihui3", 19),
+                new Per1("1", "lili", 24));
+        Map<String, List<Per1>> collect = list.stream().sorted(Comparator.comparing(Per1::getAge)).collect(Collectors.groupingBy(Per1::getType));
+        System.out.println(collect);
     }
+
 
 }

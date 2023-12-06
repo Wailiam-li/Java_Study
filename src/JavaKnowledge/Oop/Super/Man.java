@@ -1,15 +1,16 @@
 package JavaKnowledge.Oop.Super;
 
-public class Person {
+public class Man {
 
     private String name;
-    private int age;
+    private Integer age;
 
-    public Person() {
-        System.out.println("调用了父类的无参构造方法！");
+    public Man() {
+        System.out.println("默认调用父类的无参构造方法！");
     }
 
-    public Person(String name, int age) {
+    public Man(String name, int age) {
+        System.out.println("调用父类的有参构造方法！");
         //有参构造方法都没有写对！！！
         this.name = name;
         this.age = age;
@@ -18,7 +19,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Man{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
