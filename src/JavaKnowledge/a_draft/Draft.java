@@ -106,5 +106,26 @@ public class Draft {
         System.out.println(collect);
     }
 
+    @Test
+    public void test03() {
+        int a = 1;
+        String b = null;
+        if (a == 2 && b.matches("\\d{1}")) {
+            System.out.println("999");
+        } else {
+            System.out.println("111");
+        }
+    }
+//小结：if的判断中，利用&&连接的条件，如果第一个条件不符合是不会判断第二个的；  以上为例
 
+    public void test04() {
+        Integer a = 12;
+
+        if (a.toString().matches("\\d{2}")==false){
+            System.out.println("错错错！");
+        }else {
+            System.out.println("对对对！");
+        }
+
+    }
 }
