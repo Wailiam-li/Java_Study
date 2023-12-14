@@ -118,13 +118,14 @@ public class Draft {
     }
 //小结：if的判断中，利用&&连接的条件，如果第一个条件不符合是不会判断第二个的；  以上为例
 
+    @Test
     public void test04() {
-        Integer a = 12;
+        String a = "";
 
-        if (a.toString().matches("\\d{2}")==false){
+        if (a.toString().matches("\\d*")==false){
             System.out.println("错错错！");
         }else {
-            System.out.println("对对对！");
+            System.out.println("啊对对对！");
         }
 
     }
