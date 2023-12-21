@@ -2,6 +2,7 @@ package JavaKnowledge.a_draft;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -129,4 +130,17 @@ public class Draft {
         }
 
     }
+
+    @Test
+    public void test05() {
+        BigDecimal a = new BigDecimal("1.09");
+
+        if (a.setScale(0,BigDecimal.ROUND_HALF_UP).toString().matches("\\d*")==true){
+            System.out.println("错错错！");
+        }else {
+            System.out.println("啊对对对！");
+        }
+
+    }
+
 }
