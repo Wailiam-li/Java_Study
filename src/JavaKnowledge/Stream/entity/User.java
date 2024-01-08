@@ -2,7 +2,7 @@ package JavaKnowledge.Stream.entity;
 
 public class User {
     private String name;
-    private int age;
+    private Integer age;
 
     public User(String name, int age) {
         this.name = name;
@@ -20,7 +20,7 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
