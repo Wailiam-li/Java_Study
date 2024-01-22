@@ -59,4 +59,15 @@ public class Test02 {
         String mm = localDate.format(DateTimeFormatter.ofPattern("MM")); //这里居然还能根据 月的格式 单独 取月！！
        
     }
+
+    @Test   //测试contains()方法
+    public void test05() {
+       String a="aaaaa";
+       if (a.contains("b")){
+           System.out.println("666666");
+       }
+
+
+    }
+
 }

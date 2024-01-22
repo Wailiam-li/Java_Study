@@ -143,4 +143,30 @@ public class Draft {
 
     }
 
+    @Test  //对set集合的取并集测试
+    public void test06() {
+       List<String> list=Arrays.asList("a","b","a","c");
+        System.out.println(list);
+        List<String> list2=Arrays.asList("c","d","e");
+        Set set=new HashSet<>(list);
+        System.out.println(set);
+        set.addAll(list2);
+        System.out.println(set);
+    }
+
+    @Test  //对set集合的取并集测试
+    public void test07() {
+      Per per1=new Per("lili",20);
+      Per per2=new Per("liwei",21);
+      Per per3=new Per("lihui",22);
+      Per per4=new Per("lihu",28);
+      List<Per> pers=new ArrayList<>();
+      pers.add(per1);
+      pers.add(per2);
+      pers.add(per3);
+      pers.add(per4);
+      Integer integer = pers.stream().map(Per::getAge).max(Comparator.comparingInt(e -> e)).get();
+      System.out.println(integer);
+
+    }
 }
