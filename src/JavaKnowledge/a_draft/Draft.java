@@ -1,5 +1,7 @@
 package JavaKnowledge.a_draft;
 
+import lombok.val;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -123,9 +125,9 @@ public class Draft {
     public void test04() {
         String a = "";
 
-        if (a.toString().matches("\\d*")==false){
+        if (a.toString().matches("\\d*") == false) {
             System.out.println("错错错！");
-        }else {
+        } else {
             System.out.println("啊对对对！");
         }
 
@@ -135,9 +137,9 @@ public class Draft {
     public void test05() {
         BigDecimal a = new BigDecimal("1.09");
 
-        if (a.setScale(0,BigDecimal.ROUND_HALF_UP).toString().matches("\\d*")==true){
+        if (a.setScale(0, BigDecimal.ROUND_HALF_UP).toString().matches("\\d*") == true) {
             System.out.println("错错错！");
-        }else {
+        } else {
             System.out.println("啊对对对！");
         }
 
@@ -145,10 +147,10 @@ public class Draft {
 
     @Test  //对set集合的取并集测试
     public void test06() {
-       List<String> list=Arrays.asList("a","b","a","c");
+        List<String> list = Arrays.asList("a", "b", "a", "c");
         System.out.println(list);
-        List<String> list2=Arrays.asList("c","d","e");
-        Set set=new HashSet<>(list);
+        List<String> list2 = Arrays.asList("c", "d", "e");
+        Set set = new HashSet<>(list);
         System.out.println(set);
         set.addAll(list2);
         System.out.println(set);
@@ -156,17 +158,41 @@ public class Draft {
 
     @Test  //对set集合的取并集测试
     public void test07() {
-      Per per1=new Per("lili",20);
-      Per per2=new Per("liwei",21);
-      Per per3=new Per("lihui",22);
-      Per per4=new Per("lihu",28);
-      List<Per> pers=new ArrayList<>();
-      pers.add(per1);
-      pers.add(per2);
-      pers.add(per3);
-      pers.add(per4);
-      Integer integer = pers.stream().map(Per::getAge).max(Comparator.comparingInt(e -> e)).get();
-      System.out.println(integer);
+        Per per1 = new Per("lili", 20);
+        Per per2 = new Per("liwei", 21);
+        Per per3 = new Per("lihui", 22);
+        Per per4 = new Per("lihu", 28);
+        List<Per> pers = new ArrayList<>();
+        pers.add(per1);
+        pers.add(per2);
+        pers.add(per3);
+        pers.add(per4);
+        Integer integer = pers.stream().map(Per::getAge).max(Comparator.comparingInt(e -> e)).get();
+        System.out.println(integer);
 
+    }
+
+    @Test  //对判断语句进行
+    public void test08() {
+        int a = 1;
+        Per per1 = new Per();
+        if (a == 1 && per1.getName().equals("李威")) {
+            System.out.println("666666");
+        }
+    }
+    //结：由此看来，if（）的判断语句中，如果用“||”，之前要前一个满足，就不会管后面的判断；用“&&”就是前后几个判断 都会 判断
+
+
+    @Test  //StringUtils.upperCase
+    public void test09() {
+        String a = "123xcv";
+        String s = StringUtils.upperCase(a);
+        System.out.println(s);
+    }
+
+    @Test  //UUID.randomUUID()可以用来生成验证的token
+    public void test10() {
+        String s = UUID.randomUUID().toString();  //生成了一个不包括下划线的32位的字符串
+        System.out.println(s);
     }
 }
