@@ -1,5 +1,6 @@
 package JavaKnowledge.a_draft;
 
+import cn.hutool.core.bean.BeanUtil;
 import lombok.val;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -194,5 +195,12 @@ public class Draft {
     public void test10() {
         String s = UUID.randomUUID().toString();  //生成了一个不包括下划线的32位的字符串
         System.out.println(s);
+    }
+
+    @Test   //hutool中的BeanUtil.copyProperties使用
+    public void test11(){
+        Per p1=new Per("李威",21);
+        User u1= BeanUtil.copyProperties(p1,User.class);
+        System.out.println(u1);
     }
 }
