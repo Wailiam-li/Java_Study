@@ -103,6 +103,11 @@ public class StreamMethod {
         list.add(new JavaKnowledge.Stream.entity.User("lihui", 21));
         List<User> collect = list.stream().sorted(Comparator.comparing(User::getAge).reversed()).collect(Collectors.toList());
         System.out.println(collect);
+        User user = collect.stream().findFirst().orElse(null);  //就是找的第一个
+        User user2 = collect.stream().filter(e->e.getAge().equals(user.getAge()-2)).findFirst().orElse(null);
+        System.out.println(user);
+        System.out.println(user2);
+
     }
 
     /*

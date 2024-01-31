@@ -15,6 +15,9 @@ public class Test {
         System.out.println(s2);
 
 
+        Student s3 = new Student("李威", 22,20181898);
+        System.out.println(s3);
+
     }
 
 }
