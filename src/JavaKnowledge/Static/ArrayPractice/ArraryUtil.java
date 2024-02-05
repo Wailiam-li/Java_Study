@@ -1,9 +1,12 @@
 package JavaKnowledge.Static.ArrayPractice;
 
+import lombok.Getter;
+
+@Getter
 public class ArraryUtil {
 
     //返回整数数组的内容,返回的是字符串格式的；
-    public static String printArr(int[] a) {
+    protected static String printArr(int[] a) {   //注：这里用 private关键字 会提示把包 也设为私有。
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < a.length; i++) {
             if (i == 0) {
@@ -19,7 +22,7 @@ public class ArraryUtil {
     }
 
     //用于返回平均分
-    public static int getAerage(int[] a) {
+    protected static int getAerage(int[] a) {
         int total = 0;
 
         for (int j = 0; j < a.length; j++) {
