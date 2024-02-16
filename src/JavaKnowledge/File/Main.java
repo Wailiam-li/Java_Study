@@ -36,6 +36,8 @@ public class Main {
     @Test
     public void study01() throws IOException {
         /*
+        File成员方法（创建、删除）：
+
         public boolean createNewFile()
         创建一个新的空的文件
         public boolean mkdir()
@@ -44,6 +46,7 @@ public class Main {
         创建多级文件夹
         public boolean delete()
         删除文件、空文件夹   */
+
         //1.createNewFile 创建一个新的空的文件
         //细节1:如果当前路径表示的文件是不存在的，则创建成功、方法返回truell如果当前路径表示的文件是存在的，则创建失败，方法返回falsel/细节2:如果父级路径是不存在的，那么方法会有异常IOException
         //细节3: createNewFile方法创建的一定是文件，如果路径中不包含后缀名，则创建一个没有后缀的文件/*
@@ -70,6 +73,7 @@ public class Main {
     @Test
     public void study02() {
         /*
+         File成员方法（获取并遍历）：
            常见成员方法：
            1.获取并遍历:  .listFiles()
          */
