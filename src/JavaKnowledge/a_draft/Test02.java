@@ -24,40 +24,37 @@ public class Test02 {
     @Test
     public void test01() {
         String yyyyMMddhhmmss = DateTimeFormatter.ofPattern("yyyyMMdd").format(LocalDateTime.now());
-        SimpleDateFormat sdf= new SimpleDateFormat("yyyyMMdd");
-        Date parse=null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Date parse = null;
         try {
-             parse = sdf.parse(yyyyMMddhhmmss);
-        }catch (Exception e){
+            parse = sdf.parse(yyyyMMddhhmmss);
+        } catch (Exception e) {
         }
         System.out.println(parse);
     }
 
     @Test
     public void test02() {
-        int res=1;
-        res&=0;
+        int res = 1;
+        res &= 0;
         System.out.println(res);
 
     }
 
     @Test
     public void test03() {
-     //传一个date类型的日期，与当前时间进行比较；
-        Date date=new Date(1700409600L);
+        //传一个date类型的日期，与当前时间进行比较；
+        Date date = new Date(1700409600L);
         if (date.before(new Date())) {
             System.out.println("res");
         }
-    public void test01() {
-        String yyyyMMddhhmmss = DateTimeFormatter.ofPattern("yyyyMMddHHmmss").format(LocalDateTime.now());
-        System.out.println(yyyyMMddhhmmss);
     }
 
     /**
      * 演示遇到闰年  2月29号的问题
      */
     @Test
-    public void test02() {
+    public void test04() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = "2021-02-29";
         try {
@@ -65,9 +62,17 @@ public class Test02 {
         } catch (Exception e) {
             System.out.println("日期格式不正确");
         }
+    }
 
     @Test
-    public void test04() {
+    public void test05() {
+        String yyyyMMddhhmmss = DateTimeFormatter.ofPattern("yyyyMMddHHmmss").format(LocalDateTime.now());
+        System.out.println(yyyyMMddhhmmss);
+    }
+
+
+    @Test
+    public void test06() {
         LocalDate localDate = LocalDate.now().minusMonths(1L);
         int year = localDate.getYear();
         Month month = localDate.getMonth();
@@ -76,11 +81,11 @@ public class Test02 {
     }
 
     @Test   //测试contains()方法
-    public void test05() {
-       String a="aaaaa";
-       if (a.contains("b")){
-           System.out.println("666666");
-       }
+    public void test07() {
+        String a = "aaaaa";
+        if (a.contains("b")) {
+            System.out.println("666666");
+        }
 
 
     }
