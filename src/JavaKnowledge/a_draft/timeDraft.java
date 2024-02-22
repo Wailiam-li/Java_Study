@@ -5,10 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class timeDraft {
 
@@ -95,7 +92,8 @@ public class timeDraft {
 
     @Test
     public void test01() {
-
-
+      List<String> list=new ArrayList<>();
+        String s = list.toString();
+        System.out.println(s);
     }
 }
