@@ -3,7 +3,7 @@ package JavaKnowledge.a_draft;
 import lombok.Data;
 
 @Data
-public class BpoStaffWeekllyTimeVO {
+public class TimeVO {
     private String startDate;
     private String endDate;
 

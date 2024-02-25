@@ -5,10 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class timeDraft {
 
@@ -17,12 +14,12 @@ public class timeDraft {
     @Test
     public void main() {
         Date now = new Date();
-        BpoStaffWeekllyTimeVO bpoStaffWeekllyTimeVO = modifyQueryDate(now.getTime() + "");
-        System.out.println(bpoStaffWeekllyTimeVO);
+        TimeVO timeVO = modifyQueryDate(now.getTime() + "");
+        System.out.println(timeVO);
     }
 
-    private BpoStaffWeekllyTimeVO modifyQueryDate(String longTime) { //传入的参数为时间毫秒值
-        BpoStaffWeekllyTimeVO timeVO = new BpoStaffWeekllyTimeVO();
+    private TimeVO modifyQueryDate(String longTime) { //传入的参数为时间毫秒值
+        TimeVO timeVO = new TimeVO();
         if (StringUtils.isBlank(longTime) || "null".equals(longTime)) { //若传入的日期为空，取当天日期
             Map<String, String> dayMap = this.getDayOfWeek(new Date()); //得到这天的所在周的开始日期与结束日期
             timeVO.setStartDate(dayMap.get("startDate"));  //
@@ -95,7 +92,8 @@ public class timeDraft {
 
     @Test
     public void test01() {
-
-
+      List<String> list=new ArrayList<>();
+        String s = list.toString();
+        System.out.println(s);
     }
 }

@@ -2,6 +2,7 @@ package JavaKnowledge.a_draft;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -125,6 +126,16 @@ public class Test02 {
         System.out.println(date1);
         Date date2 = new Date(1706580620000L);
         System.out.println(date2);
+    }
+
+    @Test
+    public void test12() {
+        BigDecimal a=new BigDecimal("-12");
+        BigDecimal b=new BigDecimal("10");
+        BigDecimal c=a.add(b);
+
+        System.out.println(a.add(b));
+
     }
 
 }
