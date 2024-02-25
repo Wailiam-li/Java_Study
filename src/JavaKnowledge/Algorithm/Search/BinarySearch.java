@@ -1,4 +1,4 @@
-package JavaKnowledge.Algorithm;
+package JavaKnowledge.Algorithm.Search;
 
 /*
       Algorithm：算法
