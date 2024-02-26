@@ -1,4 +1,4 @@
-package JavaKnowledge.Algorithm.Search;
+package JavaKnowledge.Algorithm.search;
 
 /**
  * @Date:2024/2/25 11:16
