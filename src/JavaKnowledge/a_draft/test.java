@@ -204,9 +204,20 @@ public class test {
              }
 
      );
-
     }
 
+
+    @Test
+    public void test013() {
+    BigDecimal a=new BigDecimal("42000");
+    BigDecimal b=new BigDecimal("700000");
+        int i = a.divide(b).multiply(new BigDecimal("1200")).intValue();
+        BigDecimal multiply = a.divide(b).multiply(new BigDecimal("12"));
+
+        System.out.println(i);
+        System.out.println(multiply);
+
+    }
 }
 
 
