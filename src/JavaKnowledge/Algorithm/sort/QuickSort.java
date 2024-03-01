@@ -24,6 +24,11 @@ public class QuickSort {
         //首先
         int start = i;
         int end = j;
+
+        //这里这个递归的出口我不是很理解
+
+
+
         //这里是否需要考虑基准值赋值的问题；
         int baseNum = arr[i];
 
@@ -32,8 +37,9 @@ public class QuickSort {
                 if (baseNum > arr[end] || start >= end) {  //这里第二个条件有待确认是否正确.  这里个循环主要是为了找到end这边开始的那个值
                     break;
                 }
+                end--;
             }
-            end--;
+
             while (true) {
                 if (baseNum < arr[start] || start >= end) {
                     break;
@@ -49,6 +55,11 @@ public class QuickSort {
         int temp = arr[i];
         arr[i] = arr[start];
         arr[start] = temp;
+
+        //再利用此排序方法进行递归:将基准值两边的两组数组在分别调用此方法
+        quickSort(arr,i,start-1);
+        quickSort(arr,start+1,j);
+
     }
 
     public static void printArr(int[] arr) {
