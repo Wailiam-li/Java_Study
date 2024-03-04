@@ -130,12 +130,33 @@ public class Test02 {
 
     @Test
     public void test12() {
-        BigDecimal a=new BigDecimal("-12");
-        BigDecimal b=new BigDecimal("10");
-        BigDecimal c=a.add(b);
+        BigDecimal a = new BigDecimal("-12");
+        BigDecimal b = new BigDecimal("10");
+        BigDecimal c = a.add(b);
 
         System.out.println(a.add(b));
 
     }
+
+    @Test  //对集合进行截取一定的数量
+    public void test13() {
+        List<String> set = new ArrayList<>();
+        // 步骤2: 向集合中添加数据
+        set.add("App1e");
+        set.add("Banana");
+        set.add("Orange");
+        set.add("Grape");
+
+        // 步骤3: 使用截取的方法获取部分数据
+//     List<String> list = new ArrayList<>(set);
+        List<String> subList = set.subList(1, 4);
+       //输出截取的部分数据
+        System.out.println("截取的部分数据: ");
+        for (String element : subList) {
+            System.out.println(element);
+        }
+
+    }
+
 
 }
