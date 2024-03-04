@@ -14,7 +14,7 @@ package JavaKnowledge.Algorithm.sort;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 2, 5, 4};
+        int[] arr = {3, 1, 6, 5, 4, 9, 2, 8, 7, 10};
         quickSort(arr, 0, arr.length - 1);
 
         printArr(arr);
@@ -25,9 +25,12 @@ public class QuickSort {
         int start = i;
         int end = j;
 
-        //这里这个递归的出口我不是很理解
-
-
+        /*这里这个递归的出口我不是很理解——————>针对单个小段的排序的结束条件就是：start>end,这里的start和end就是一小段排序中
+          的头和尾，因此当头和尾相遇（表示这个小组排序只有一个数字了），或 头>尾时，就不用再进行排序了。
+*/
+        if (start>=end){
+            return;
+        }
 
         //这里是否需要考虑基准值赋值的问题；
         int baseNum = arr[i];
@@ -57,8 +60,8 @@ public class QuickSort {
         arr[start] = temp;
 
         //再利用此排序方法进行递归:将基准值两边的两组数组在分别调用此方法
-        quickSort(arr,i,start-1);
-        quickSort(arr,start+1,j);
+        quickSort(arr, i, start - 1);
+        quickSort(arr, start + 1, j);
 
     }
 
