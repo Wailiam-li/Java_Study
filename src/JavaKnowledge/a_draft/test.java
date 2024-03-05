@@ -209,11 +209,11 @@ public class test {
 
     @Test
     public void test013() {
-    BigDecimal a=new BigDecimal("42000");
-    BigDecimal b=new BigDecimal("700000");
-        int i = a.divide(b).multiply(new BigDecimal("1200")).intValue();
-        BigDecimal multiply = a.divide(b).multiply(new BigDecimal("12"));
-
+    BigDecimal a=new BigDecimal("450");
+    BigDecimal b=new BigDecimal("7000");
+        int i = a.multiply(new BigDecimal("1200")).divide(b,0,BigDecimal.ROUND_HALF_DOWN).intValue();
+        BigDecimal multiply = a.multiply(new BigDecimal("12")).divide(b,2,BigDecimal.ROUND_HALF_DOWN);
+    //注：一般除数后面要跟上 保留多少位的规则，即.divide()里需要多加几个参数
         System.out.println(i);
         System.out.println(multiply);
 

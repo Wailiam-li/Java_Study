@@ -1,7 +1,6 @@
 package JavaKnowledge.Algorithm.recursion;
 
 /**
- * ClassName:KnowledgeRecord
  * Description:   recursion：表示“递归”的意思
  * 注：递归利用了Java的栈内存空间，每次调用一个方法的时候，使方法进栈，所以递归必须要有出口，否则Java汇报栈内存溢出。
  *
