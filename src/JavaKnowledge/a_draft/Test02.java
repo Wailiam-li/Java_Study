@@ -158,5 +158,18 @@ public class Test02 {
 
     }
 
+    @Test  //对edm中的周报附件 进行分析
+    public void test14() {
+       List<String> list=Arrays.asList("abc","cde","def");
+       StringBuilder sb=new StringBuilder();
+        for (String s : list) {
+            sb.append(s+",");
+        }
+      //  sb.deleteCharAt(sb.length()-1);
+        String s=new String(sb);
+        System.out.println(s);
+
+    }
+
 
 }
