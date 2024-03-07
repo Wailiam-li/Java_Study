@@ -21,7 +21,7 @@ public class BubbleSort {
         int[] arr = {2, 4, 5, 3, 1};
 
         /*
-        //我们先来演示每一轮的比较代码，再汇总，放便理解
+        //我们先来演示每一轮的比较代码，再汇总，方便理解
 
         //第一轮
         for (int i = 0; i < arr.length - 1; i++) { //这里用arr.length-1是为了arr[i+1]索引越界
