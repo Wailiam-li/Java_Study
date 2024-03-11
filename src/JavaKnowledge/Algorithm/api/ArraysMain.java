@@ -26,7 +26,8 @@ public class ArraysMain {
     public void use2() {
         List<String> list = Arrays.asList("a", "b", "c", "d"); //注：这里和集合一样，里面的元素类型应该一致
         System.out.println(list);
-
+        String[] strings = list.toArray(new String[list.size()]);
+        System.out.println(Arrays.toString(strings));
     }
 
 

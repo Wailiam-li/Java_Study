@@ -203,4 +203,12 @@ public class Draft {
         User u1= BeanUtil.copyProperties(p1,User.class);
         System.out.println(u1);
     }
+
+
+    @Test   //
+    public void test12(){
+        Calendar c = Calendar.getInstance();
+        System.out.println(c.getWeekYear());
+    }
+
 }
