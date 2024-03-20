@@ -207,7 +207,7 @@ public class test {
     }
 
 
-    @Test
+    @Test   //BigDecimal中的 .divide() 使用注意点；
     public void test013() {
     BigDecimal a=new BigDecimal("450");
     BigDecimal b=new BigDecimal("7000");
@@ -216,6 +216,26 @@ public class test {
     //注：一般除数后面要跟上 保留多少位的规则，即.divide()里需要多加几个参数
         System.out.println(i);
         System.out.println(multiply);
+
+    }
+
+
+    @Test
+    public void test014() {
+      int res=2;
+      res&=2;
+        System.out.println(res);
+
+    }
+
+    @Test
+    public void test015() {
+        Per p1=new Per("lili",21);
+        Per p2=new Per("lilo",23);
+        List<Per> list=new ArrayList<>();
+        list.add(p1); list.add(p2);
+
+
 
     }
 }
