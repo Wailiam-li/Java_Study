@@ -1,7 +1,6 @@
 package JavaKnowledge.a_draft;
 
 import cn.hutool.core.bean.BeanUtil;
-import lombok.val;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -198,9 +197,74 @@ public class Draft {
     }
 
     @Test   //hutool中的BeanUtil.copyProperties使用
-    public void test11(){
-        Per p1=new Per("李威",21);
-        User u1= BeanUtil.copyProperties(p1,User.class);
+    public void test11() {
+        Per p1 = new Per("李威", 21);
+        User u1 = BeanUtil.copyProperties(p1, User.class);
         System.out.println(u1);
+    }
+
+    @Test
+    public void test12() {
+        String s = "((())))))";
+        String[] split = s.split("");
+        System.out.println(Arrays.toString(split));
+        for (int i = 0; i < split.length; i++) {
+            System.out.println(split[i]);
+        }
+    }
+
+    @Test
+    public void test13() {
+        String s = "([)]";
+        boolean valid = isValid(s);
+        System.out.println(valid);
+    }
+
+    public boolean isValid(String s) {
+        boolean flag = false;
+        String[] split = s.split("");
+        List<String> list = new ArrayList<>();
+        for (String s1 : split) {
+            list.add(s1);
+        }
+        if (list.size() == 0) {
+            return false;
+        }
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.contains("(") && list.get(i).equals("(")) {  //这里怎么防止索引越界的问题！！
+                for (int j = 1 + i; j < list.size(); j++) {
+                    if (list.get(j).equals(")")) {
+                        list.remove(list.get(i));  //注意这里，移除后整个list的集合会变，因此list.get(j)得到的不是原来的“）”
+                        list.remove(")");
+                    }
+                }
+            }
+
+            if (list.contains("[") && list.get(i).equals("[")) {
+                for (int j = 1 + i; j < list.size(); j++) {
+                    if (list.get(j).equals("]")) {
+                        list.remove(list.get(i));
+                        list.remove("]");
+
+                    }
+                }
+            }
+
+            if (list.contains("{") && list.get(i).equals("{")) {
+                for (int j = 1 + i; j < list.size(); j++) {
+                    if (list.get(j).equals("}")) {
+                        list.remove(list.get(i));
+                        list.remove("}");
+                    }
+                }
+            }
+
+            if (list.size() == 0) {
+                return true;
+
+            }
+        }
+        return flag;
     }
 }

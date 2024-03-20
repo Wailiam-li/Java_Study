@@ -48,7 +48,7 @@ public class ArraysMain {
 
     @Test  //.sort(数组，排序规则)方法，传两个参数，底层利用的是二分查找+插入排序； 记住 ：o1-o2是升序；o2-o1是降序即可
     public void use5() {
-        Integer[] arr = {3, 1, 2, 5, 4};  //注意：这里Comparator<>()必须传包装类型
+        Integer[] arr = {3, 1, 2, 5, 4};  //注意：这里Comparator<>()这个方法中 必须传包装类型
         Arrays.sort(arr, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
