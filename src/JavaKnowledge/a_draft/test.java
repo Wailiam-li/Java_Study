@@ -223,8 +223,19 @@ public class test {
     @Test
     public void test014() {
       int res=2;
-      res*=2;
+      res&=2;
         System.out.println(res);
+
+    }
+
+    @Test
+    public void test015() {
+        Per p1=new Per("lili",21);
+        Per p2=new Per("lilo",23);
+        List<Per> list=new ArrayList<>();
+        list.add(p1); list.add(p2);
+
+
 
     }
 }
