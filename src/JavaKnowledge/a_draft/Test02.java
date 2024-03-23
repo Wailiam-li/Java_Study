@@ -150,7 +150,7 @@ public class Test02 {
         // 步骤3: 使用截取的方法获取部分数据
 //     List<String> list = new ArrayList<>(set);
         List<String> subList = set.subList(1, 4);
-       //输出截取的部分数据
+        //输出截取的部分数据
         System.out.println("截取的部分数据: ");
         for (String element : subList) {
             System.out.println(element);
@@ -160,16 +160,49 @@ public class Test02 {
 
     @Test  //对edm中的周报附件 进行分析
     public void test14() {
-       List<String> list=Arrays.asList("abc","cde","def");
-       StringBuilder sb=new StringBuilder();
+        List<String> list = Arrays.asList("abc", "cde", "def");
+        StringBuilder sb = new StringBuilder();
         for (String s : list) {
-            sb.append(s+",");
+            sb.append(s + ",");
         }
-      //  sb.deleteCharAt(sb.length()-1);
-        String s=new String(sb);
+        //  sb.deleteCharAt(sb.length()-1);
+        String s = new String(sb);
         System.out.println(s);
 
     }
 
+
+    @Test
+    public void test15() {
+        int[] a = {1, 1, 2};
+        int i = removeDuplicates(a);
+        System.out.println(i);
+    }
+
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        List<Integer> list = new ArrayList<>();
+        for (int num : nums) {
+            list.add(num);
+        }
+        for (int i = 0; i < list.size() - 1; i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {
+                    list.remove(list.get(j));
+                }
+            }
+        }
+//        int[]  nums1 = (int[])list.toArray(new int[list.size()]));  //把集合转成数组
+        int[] num1 = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            num1[i] = list.get(i);
+        }
+        System.out.println(Arrays.toString(num1));
+        return list.size();
+
+
+    }
 
 }
