@@ -1,5 +1,9 @@
 package JavaKnowledge.Array;
 
+/*
+      演示常见数组的初始化创建
+ */
+
 public class arrayDemo {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4};

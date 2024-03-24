@@ -172,37 +172,20 @@ public class Test02 {
     }
 
 
-    @Test
-    public void test15() {
-        int[] a = {1, 1, 2};
-        int i = removeDuplicates(a);
-        System.out.println(i);
-    }
-
-    public int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
-        List<Integer> list = new ArrayList<>();
-        for (int num : nums) {
-            list.add(num);
-        }
-        for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).equals(list.get(j))) {
-                    list.remove(list.get(j));
-                }
+    @Test   //对数组做移动操作， 尝试把数组末尾中的元素置空。
+    public void test16() {
+        String[] a = {"1", "2", "3", "4"};
+        for (int i = 0; i < a.length; i++) {
+            if (a[i].equals("3")) {
+                a[i] = "";
+            }
+            if (a[i].equals("4")) {
+                a[i] = null;
             }
         }
-//        int[]  nums1 = (int[])list.toArray(new int[list.size()]));  //把集合转成数组
-        int[] num1 = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            num1[i] = list.get(i);
-        }
-        System.out.println(Arrays.toString(num1));
-        return list.size();
-
-
+        System.out.println(Arrays.toString(a));
+        System.out.println(a.length);
     }
+
 
 }
