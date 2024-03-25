@@ -85,4 +85,42 @@ public class Test03 {
 
     }
 
+
+    @Test
+    public void test03() {
+        int[] num = {1, 3, 5, 6};
+        int i = searchInsert(num, 5);
+        System.out.println(i);
+    }
+
+    public int searchInsert(int[] nums, int target) {
+        //请必须使用时间复杂度为 O(log n) 的算法————>二分查找
+        int i = 0;
+        int j = nums.length - 1;
+        while (true) {
+            if (nums[i] > target) {
+                return i;
+            }
+            if (nums[j] < target) {
+                return j;
+            }
+            if (i == j) {
+                return i;
+            }
+            int mid = (i + j) / 2;
+            if (nums[mid] > target) {
+                j = mid;
+            } else if (nums[mid] < target) {
+                i = mid;
+            } else {
+                return mid;   //注：这里一定要以else结尾！
+//            }else {  //未找到的情况
+//
+//            }
+
+
+            }
+        }
+    }
+
 }

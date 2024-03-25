@@ -27,7 +27,7 @@ public class BinarySearch {
             if (min > max) {
                 return -2;
             } else if (arr[mid] > target) { //如果在中间的左边
-                max = mid - 1;
+                max = mid - 1;   //一定要琢磨明白这里为什么要减一而不是直接赋值？
             } else if (arr[mid] < target) {//如果在中间的右边
                 min = mid + 1;
             } else {
