@@ -150,7 +150,7 @@ public class Test02 {
         // 步骤3: 使用截取的方法获取部分数据
 //     List<String> list = new ArrayList<>(set);
         List<String> subList = set.subList(1, 4);
-       //输出截取的部分数据
+        //输出截取的部分数据
         System.out.println("截取的部分数据: ");
         for (String element : subList) {
             System.out.println(element);
@@ -160,15 +160,31 @@ public class Test02 {
 
     @Test  //对edm中的周报附件 进行分析
     public void test14() {
-       List<String> list=Arrays.asList("abc","cde","def");
-       StringBuilder sb=new StringBuilder();
+        List<String> list = Arrays.asList("abc", "cde", "def");
+        StringBuilder sb = new StringBuilder();
         for (String s : list) {
-            sb.append(s+",");
+            sb.append(s + ",");
         }
-      //  sb.deleteCharAt(sb.length()-1);
-        String s=new String(sb);
+        //  sb.deleteCharAt(sb.length()-1);
+        String s = new String(sb);
         System.out.println(s);
 
+    }
+
+
+    @Test   //对数组做移动操作， 尝试把数组末尾中的元素置空。
+    public void test16() {
+        String[] a = {"1", "2", "3", "4"};
+        for (int i = 0; i < a.length; i++) {
+            if (a[i].equals("3")) {
+                a[i] = "";
+            }
+            if (a[i].equals("4")) {
+                a[i] = null;
+            }
+        }
+        System.out.println(Arrays.toString(a));
+        System.out.println(a.length);
     }
 
 
