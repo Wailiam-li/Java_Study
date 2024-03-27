@@ -2,6 +2,7 @@ package JavaKnowledge.a_draft;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -121,6 +122,95 @@ public class Test03 {
 
             }
         }
+    }
+
+
+    @Test
+    public void test04() {
+        String s = "H w";
+        System.out.println(s.length());
+//        String s1 = s.split(" ")[s.length() - 1];
+        String[] s1 = s.split("");
+        String s2 = s1[s1.length - 1];
+//        System.out.println(s2);
+        System.out.println(Arrays.toString(s1));
+        for (int i = s1.length - 1; i >= 0; i--) {
+            if (!s1[i].equals("")) {
+                System.out.println(s1[i].length());
+                break;
+            }
+        }
+    }
+
+    @Test
+    public void test05() {   //"加一"
+        int[] d = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        String s = plusOne(d);
+        System.out.println(s);
+    }
+
+    public String plusOne(int[] digits) {
+        //用到数学函数，多少次方
+        int length = digits.length;//3
+        BigDecimal sum = BigDecimal.ZERO;
+        for (int i = length - 1; i >= 0; i--) {
+            sum = sum.add(new BigDecimal(digits[i]).multiply(new BigDecimal(Math.pow(10, length - i - 1))));
+        }
+        sum = sum.add(BigDecimal.ONE);
+        String s = sum + "";
+        String[] split = s.split("");
+        int[] a = new int[s.length()];
+        for (int i = 0; i < split.length; i++) {
+            a[i] = Integer.valueOf(split[i]);
+        }
+        return Arrays.toString(a);
+    }
+
+
+    @Test
+    public void test06() {
+        String a = "11";
+        String b = "1";
+        String s = addBinary(a, b);
+        System.out.println(s);
+
+    }
+
+
+    public String addBinary(String a, String b) {
+        String[] a1 = a.split("");
+        String[] b1 = b.split("");
+        int length = a.length() > b.length() ? a.length() : b.length();
+        //先把为空的填为“0”
+        for (int i = 0; i < length; i++) {
+            if (a1[i].equals("")) {
+                a1[i] = "0";
+            }
+            if (b1[i].equals("")) {
+                b1[i] = "0";
+            }
+        }
+        int flag = 0;
+        List<String> s = new ArrayList<>();
+        for (int i = length - 1; i >= 0; i--) {
+            if (Integer.valueOf(a1[i]) + Integer.valueOf(b1[i]) + flag == 2) {
+                s.add("0");
+                flag = 1;
+            } else {
+                s.add("1");
+                flag = 0;
+            }
+        }
+        List<String> s2 = new ArrayList<>();
+        for (int i = s.size() - 1; i >= 0; i--) {
+            s2.add(s.get(i));
+        }
+        if (s2.get(0).equals("0")) {
+            s2.remove(0);
+        }
+        String s3 = s2.toString();
+        return s3;
+
     }
 
 }
