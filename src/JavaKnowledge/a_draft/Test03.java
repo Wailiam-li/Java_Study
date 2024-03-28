@@ -169,8 +169,8 @@ public class Test03 {
 
     @Test
     public void test06() {
-        String a = "11";
-        String b = "1";
+        String a = "1";
+        String b = "111";
         String s = addBinary(a, b);
         System.out.println(s);
 
@@ -181,36 +181,80 @@ public class Test03 {
         String[] a1 = a.split("");
         String[] b1 = b.split("");
         int length = a.length() > b.length() ? a.length() : b.length();
+        String[] a2 = new String[length];
+        String[] b2 = new String[length];
         //先把为空的填为“0”
-        for (int i = 0; i < length; i++) {
-            if (a1[i].equals("")) {
-                a1[i] = "0";
+//        for (int i = 0; i < length; i++) {
+        if (a1.length < length) {  //a的长度更短
+            //把a1的全部填进去,剩余用0补齐
+            for (int i1 = 0; i1 < length - a1.length; i1++) { //"0","0"
+                a2[i1] = "0";
+
+            }          //2                  <3
+            for (int i1 = length - a1.length; i1 < length; i1++) {  //
+                a2[i1] = a1[length - 1 - (length - a1.length)];  //a1=   1-1
             }
-            if (b1[i].equals("")) {
-                b1[i] = "0";
+        } else {
+            for (int i1 = 0; i1 < length; i1++) {
+                a2[i1] = a1[i1];
             }
         }
+        if (b1.length < length) {
+            for (int i1 = 0; i1 < length - b1.length; i1++) {
+                b2[i1] = "0";
+            }
+            for (int i1 = length - b1.length; i1 < length; i1++) {
+                b2[i1] = b1[length - 1 - (length - b1.length)];
+            }
+
+        } else {  //b一样长，且等于length；
+            for (int i1 = 0; i1 < length; i1++) {
+                b2[i1] = b1[i1];
+            }
+        }
+
         int flag = 0;
         List<String> s = new ArrayList<>();
         for (int i = length - 1; i >= 0; i--) {
-            if (Integer.valueOf(a1[i]) + Integer.valueOf(b1[i]) + flag == 2) {
+            if (Integer.valueOf(a2[i]) + Integer.valueOf(b2[i]) + flag == 2) {
                 s.add("0");
                 flag = 1;
+            } else if (Integer.valueOf(a2[i]) + Integer.valueOf(b2[i]) + flag == 0) {
+                s.add("0");
+                flag = 0;
             } else {
                 s.add("1");
                 flag = 0;
             }
         }
+        if (flag == 1) {
+            s.add("1");
+        }
+
+        //这里集合怎么转成没有双引号的String呢？
         List<String> s2 = new ArrayList<>();
         for (int i = s.size() - 1; i >= 0; i--) {
             s2.add(s.get(i));
         }
-        if (s2.get(0).equals("0")) {
+        if (s2.get(0).equals("0") && s2.size() > 1) {
             s2.remove(0);
         }
-        String s3 = s2.toString();
+
+//        System.out.println(s2.toString());
+        String s3 = "";
+        for (String s1 : s2) {
+            s3 = s3 + s1;
+        }
         return s3;
 
+    }
+
+    public String addBinary02(String a, String b) {
+        int i = Integer.parseInt(a);  //这里使用这个可能会超出它int的范围限制
+        int j = Integer.parseInt(b);
+
+
+        return "";
     }
 
 }
