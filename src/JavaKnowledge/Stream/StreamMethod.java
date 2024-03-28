@@ -1,6 +1,8 @@
 package JavaKnowledge.Stream;
 
 import JavaKnowledge.Stream.entity.User;
+import JavaKnowledge.a_draft.Per;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -23,7 +25,22 @@ public class StreamMethod {
     public void filter() {
         List<String> list = Arrays.asList("abc", "ab", "a", "efg", "bcd");
         List<String> filter = list.stream().filter(str -> str.contains("a")).collect(Collectors.toList());
-        System.out.println(filter);
+        System.out.println(filter);    //这里应该是过滤留下来
+        System.out.println("-------------------");
+    }
+
+    @Test
+    public void filter2() {
+        Per p1=new Per("",null);
+        Per p2=new Per("q",22);
+        Per p3=new Per("w",23);
+
+        List<Per> list = new ArrayList<>();
+        list.add(p1);
+        list.add(p2);
+        list.add(p3);
+        List<String> filter = list.stream().filter(str -> StringUtils.isNotEmpty(str.getName())).map(Per::getName).collect(Collectors.toList());
+        System.out.println(filter);    //这里应该是过滤留下来
         System.out.println("-------------------");
     }
 
