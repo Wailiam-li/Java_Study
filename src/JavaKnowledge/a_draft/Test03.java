@@ -169,8 +169,8 @@ public class Test03 {
 
     @Test
     public void test06() {
-        String a = "1";
-        String b = "111";
+        String a = "11";
+        String b = "1";
         String s = addBinary(a, b);
         System.out.println(s);
 
@@ -181,45 +181,51 @@ public class Test03 {
         String[] a1 = a.split("");
         String[] b1 = b.split("");
         int length = a.length() > b.length() ? a.length() : b.length();
-        String[] a2 = new String[length];
-        String[] b2 = new String[length];
+        StringBuilder a2 = new StringBuilder();
+        StringBuilder b2 = new StringBuilder();
+
         //先把为空的填为“0”
 //        for (int i = 0; i < length; i++) {
         if (a1.length < length) {  //a的长度更短
             //把a1的全部填进去,剩余用0补齐
-            for (int i1 = 0; i1 < length - a1.length; i1++) { //"0","0"
-                a2[i1] = "0";
-
-            }          //2                  <3
-            for (int i1 = length - a1.length; i1 < length; i1++) {  //
-                a2[i1] = a1[length - 1 - (length - a1.length)];  //a1=   1-1
+            for (int i1 = 0; i1 < length - a1.length; i1++) {
+                a2.append("0");
             }
+            for (int i1 = 0; i1 < a1.length; i1++) {
+                a2.append(a1[i1]);
+            }
+
         } else {
             for (int i1 = 0; i1 < length; i1++) {
-                a2[i1] = a1[i1];
+                a2.append(a1[i1]);
             }
         }
-        if (b1.length < length) {
+        if (b1.length < length) {  //2-
             for (int i1 = 0; i1 < length - b1.length; i1++) {
-                b2[i1] = "0";
+                b2.append("0");
             }
-            for (int i1 = length - b1.length; i1 < length; i1++) {
-                b2[i1] = b1[length - 1 - (length - b1.length)];
+            for (int i1 = 0; i1 < b1.length; i1++) {
+                b2.append(b1[i1]);
             }
 
         } else {  //b一样长，且等于length；
             for (int i1 = 0; i1 < length; i1++) {
-                b2[i1] = b1[i1];
+                b2.append(b1[i1]);
             }
         }
+        String[] a3 = a2.toString().split("");
+        String[] b3 = b2.toString().split("");
 
         int flag = 0;
         List<String> s = new ArrayList<>();
         for (int i = length - 1; i >= 0; i--) {
-            if (Integer.valueOf(a2[i]) + Integer.valueOf(b2[i]) + flag == 2) {
+            if (Integer.valueOf(a3[i]) + Integer.valueOf(b3[i]) + flag == 2) {
                 s.add("0");
                 flag = 1;
-            } else if (Integer.valueOf(a2[i]) + Integer.valueOf(b2[i]) + flag == 0) {
+            } else if (Integer.valueOf(a3[i]) + Integer.valueOf(b3[i]) + flag == 3) {
+                s.add("1");
+                flag = 1;
+            } else if (Integer.valueOf(a3[i]) + Integer.valueOf(b3[i]) + flag == 0) {
                 s.add("0");
                 flag = 0;
             } else {
@@ -256,5 +262,38 @@ public class Test03 {
 
         return "";
     }
+
+
+    @Test
+    public void test07() {
+        //原来.reverse()方法在StringBuilder当中！！
+        StringBuilder builder = new StringBuilder();
+        StringBuilder append = builder.append("a").append("b").append("c");
+        System.out.println(append.reverse().toString());
+    }
+
+
+    @Test
+    public void test08() {
+        int x = 0;           //这里使用int类型好像根本无法计算，因为int类型变量必须初始化；
+        int i = mySqrt(3);
+        System.out.println(i);
+    }
+
+
+    public int mySqrt(int x) {
+        int l = 0, r = x, ans = -1;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;   //注意它这里这一步，  对于最大值是用的是r-l，
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return ans;
+    }
+
 
 }
