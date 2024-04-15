@@ -188,4 +188,20 @@ public class Test02 {
     }
 
 
+    @Test
+    public void test17() {
+        String a = "";
+        Integer integer = Integer.valueOf(a);
+        System.out.println(integer);
+    }
+
+    @Test
+    public void test18() {
+        String a = "";
+        LocalDate localDate = LocalDate.now().minusYears(1);
+        String year =String.valueOf(localDate.getYear());
+        System.out.println(year);
+    }
+
+
 }
