@@ -38,14 +38,14 @@ public class QuickSort {
         while (start != end) {
             while (true) {
                 if (baseNum > arr[end] || start >= end) {  //这里第二个条件有待确认是否正确.  这里个循环主要是为了找到end这边开始的那个值
-                    break;
+                    break;   //从末尾开始寻找，一直找到小于基准值的索引下标
                 }
                 end--;
             }
 
             while (true) {
-                if (baseNum < arr[start] || start >= end) {
-                    break;
+                if (baseNum < arr[start] || start >= end) {  //注：start >= end这个条件在终止时候很重要！！
+                    break;   //从头开始寻找，一直找到大于基准值的索引下标
                 }
                 start++;  //以上两个循环会一直循环到遇到各自的那个符合条件的值
             }
@@ -55,7 +55,7 @@ public class QuickSort {
             arr[end] = temp;
         }
         //再把基准值归位
-        int temp = arr[i];
+        int temp = arr[i];       //这里为什么是和arr[start]交换呢？
         arr[i] = arr[start];
         arr[start] = temp;
 
