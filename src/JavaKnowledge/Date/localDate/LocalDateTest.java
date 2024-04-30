@@ -77,7 +77,7 @@ public class LocalDateTest {
     public void test02() {
         LocalDate now = LocalDate.now();
 
-        String format = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));//注意！！！这里不支持时分秒！！！
+        String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));//注意！！！这里不支持时分秒！！！
         
         System.out.println(format);
         System.out.println(now.getClass());
