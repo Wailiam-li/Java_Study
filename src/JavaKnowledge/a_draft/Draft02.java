@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * ClassName:Draft02
- * Description:
+ * Description:     感觉这种黑色主题的屏幕用着感觉眼睛比较舒服的
  *
  * @Date:2023/8/16 11:11
  * @Author: 李威威
@@ -47,8 +47,14 @@ public class Draft02 {
 
     @Test
     public void test02() {
-        BigDecimal d=new BigDecimal("17.9444");
+        BigDecimal d = new BigDecimal("17.9444");
         int i = d.intValue();
         System.out.println(i);
     }
+
+    @Test
+    public void test03() {
+        System.out.printf("就是黑色主题有些字符和错误的提示不是太明显，没有白色主题提示那么明显");
+    }
+
 }
