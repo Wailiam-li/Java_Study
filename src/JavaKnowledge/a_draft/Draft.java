@@ -166,9 +166,10 @@ public class Draft {
         pers.add(per2);
         pers.add(per3);
         pers.add(per4);
-        Integer integer = pers.stream().map(Per::getAge).max(Comparator.comparingInt(e -> e)).get();
-        System.out.println(integer);
-
+//        Integer integer = pers.stream().map(Per::getAge).max(Comparator.comparingInt(e -> e)).get();
+//        System.out.println(integer);
+        List<Per> pers1 = pers.subList(0, 3);
+        System.out.println(pers1);
     }
 
     @Test  //对判断语句进行
@@ -277,25 +278,99 @@ public class Draft {
 
     @Test
     public void test15() {
+
+
+    }
+
+//    @Test
+    public Date endMonth() {
+        Calendar calendar = Calendar.getInstance();
+        int month = calendar.get(Calendar.MONTH); //4
+        calendar.set(Calendar.MONTH, month + -1);//注:这里是set方法，例当前5月，得到的month值是4，要得到上个月的month值，减1即可
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        return calendar.getTime();
+    }
+
+    public Date beginMonth() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, -1);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.HOUR_OF_DAY, 00);
         calendar.set(Calendar.MINUTE, 00);
         calendar.set(Calendar.SECOND, 00);
-        System.out.println(calendar.getTime());
+        return calendar.getTime();
+    }
+
+
+    @Test
+    public void test16(){
+        String a="2";
+        char b=a.charAt(a.length()-1);
+        System.out.println(b);
+
+
     }
 
     @Test
-    public void test16() {
-        Calendar calendar = Calendar.getInstance();
-        int month = calendar.get(Calendar.MONTH);
-        calendar.add(Calendar.MONTH, month - 1);
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 59);
-        System.out.println(calendar.getTime());
+    public void test17(){
+      if (1==1&&1==2){
+          System.out.println("yes");
+      }else {
+          System.out.println("no");
+      }
     }
+
+    @Test
+    public void test18(){
+        if (1==1&&1==2){
+            System.out.println("yes");
+        }else {
+            System.out.println("no");
+        }
+    }
+
+    @Test  //对set集合的取并集测试
+    public void test19() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(null);
+//        System.out.println(list);
+        List<Integer> list2 = Arrays.asList(3,4,5);
+
+        list.addAll(list2);
+
+        list=list.stream().distinct().filter(r->r!=null&&r!=9999).collect(Collectors.toList());
+
+        System.out.println(list);
+//        Set set = new HashSet<>(list);
+//        System.out.println(set);
+//        set.addAll(list2);
+//        System.out.println(set);
+    }
+
+    @Test  //对set集合的取并集测试
+    public void test20() {
+      Long a=1L;
+      Long b=2L;
+
+      String c=""+a+"-"+b;
+        System.out.println(c);
+
+    }
+
+    @Test
+    public void test021() {    //.split(".")需要用到正则表达式的问题
+        String a="aaa.bbbb";
+        String[] split = a.split("\\.");
+        String s = split[0];
+        System.out.println(s);
+
+    }
+
 
 }

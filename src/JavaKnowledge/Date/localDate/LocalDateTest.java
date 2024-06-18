@@ -1,9 +1,11 @@
 package JavaKnowledge.Date.localDate;
 
+import cn.hutool.core.date.DateTime;
 import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * ClassName:LocalDate
@@ -34,7 +36,7 @@ public class LocalDateTest {
         int lengthOfYear = now.lengthOfYear();            // 获得当年总天数
         int lengthOfMonth = now.lengthOfMonth();        // 获得当月总天数
         long epochDay = now.toEpochDay();                // 与时间纪元（1970年1月1日）相差的天数
-        System.out.println("与时间纪元（1970年1月1日）相差的天数:"+epochDay+"天");
+        System.out.println("与时间纪元（1970年1月1日）相差的天数:" + epochDay + "天");
 
         //3）运算方法
         LocalDate localDate1 = now.plusDays(1);            // 给当前时间加一天
@@ -54,23 +56,23 @@ public class LocalDateTest {
         LocalDate localDate44 = now.withDayOfYear(1);    // 修改日期对象的日期(一年中的第几天)
     }
 
-       //5）比较方法
-        @Test
-        public void test () {
-            LocalDate now = LocalDate.now();
-            LocalDate localDate = LocalDate.of(2024, 8, 1);
+    //5）比较方法
+    @Test
+    public void test() {
+        LocalDate now = LocalDate.now();
+        LocalDate localDate = LocalDate.of(2024, 8, 1);
 
-            boolean isBefore = localDate.isBefore(now);        // localDate是否在当天之前
-            System.out.println("isBefore:"+isBefore);
-            boolean isAfter = localDate.isAfter(now);        // localDate是否在当天之后
-            System.out.println("isAfter:"+isAfter);
-            boolean isEqual = localDate.isEqual(now);        // localDate是否在当天
-            System.out.println("isEqual:"+isEqual);
-            boolean isLeapYear = localDate.isLeapYear();    // localDate的年份是否为闰年,判断是否为闰年的方法：是否能被4或100整除，但不被400整除
-            System.out.println("isLeapYear:"+isLeapYear);
+        boolean isBefore = localDate.isBefore(now);        // localDate是否在当天之前
+        System.out.println("isBefore:" + isBefore);
+        boolean isAfter = localDate.isAfter(now);        // localDate是否在当天之后
+        System.out.println("isAfter:" + isAfter);
+        boolean isEqual = localDate.isEqual(now);        // localDate是否在当天
+        System.out.println("isEqual:" + isEqual);
+        boolean isLeapYear = localDate.isLeapYear();    // localDate的年份是否为闰年,判断是否为闰年的方法：是否能被4或100整除，但不被400整除
+        System.out.println("isLeapYear:" + isLeapYear);
 
 
-        }
+    }
 
 
     @Test   //LocalDate转String；
@@ -78,12 +80,29 @@ public class LocalDateTest {
         LocalDate now = LocalDate.now();
 
         String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));//注意！！！这里不支持时分秒！！！
-        
+
         System.out.println(format);
         System.out.println(now.getClass());
         System.out.println(now);
 
     }
 
+    @Test
+    public void test03() {
+        // 使用无参构造创建一个DateTime对象，默认为当前日期和时间
+        DateTime now = new DateTime();
 
+
+        // 打印DateTime对象的日期和时间
+        System.out.println("当前日期和时间：" + now);
+        System.out.println("当前日期和时间：" + now.toString("yyyy-MM-dd HH:mm:ss"));
+
+        // 如果需要获取为java.util.Date对象
+        Date javaDate = now.toJdkDate();
+        System.out.println("转换为java.util.Date对象：" + javaDate);
     }
+
+
+
+
+}
