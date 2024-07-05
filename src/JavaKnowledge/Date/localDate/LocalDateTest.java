@@ -79,11 +79,14 @@ public class LocalDateTest {
     public void test02() {
         LocalDate now = LocalDate.now();
 
-        String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));//注意！！！这里不支持时分秒！！！
+        String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));//注意！！！这里不支持时分秒！！！
+        String format2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());//注意！！！这里不支持时分秒！！！
 
         System.out.println(format);
         System.out.println(now.getClass());
         System.out.println(now);
+
+        System.out.println(format2);
 
     }
 
@@ -91,7 +94,6 @@ public class LocalDateTest {
     public void test03() {
         // 使用无参构造创建一个DateTime对象，默认为当前日期和时间
         DateTime now = new DateTime();
-
 
         // 打印DateTime对象的日期和时间
         System.out.println("当前日期和时间：" + now);
@@ -102,7 +104,7 @@ public class LocalDateTest {
         System.out.println("转换为java.util.Date对象：" + javaDate);
     }
 
-
+//老了，身体扛不住，没办法
 
 
 }

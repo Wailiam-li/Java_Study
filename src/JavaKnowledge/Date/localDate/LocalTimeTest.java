@@ -3,6 +3,7 @@ package JavaKnowledge.Date.localDate;
 import org.junit.Test;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 /**
  * ClassName:LocalTime
@@ -38,6 +39,9 @@ public class LocalTimeTest {
         LocalTime localTime = LocalTime.now();
         LocalDateTime localDateTime2 = LocalDateTime.of(localDate, localTime);
         System.out.println(now1);
+//       localDateTime1.
+
+
 
     }
 

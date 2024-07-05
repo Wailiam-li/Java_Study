@@ -372,5 +372,31 @@ public class Draft {
 
     }
 
+    @Test
+    public void test022() {    //.split(".")需要用到正则表达式的问题
+        String a="aaa.bbbb.ccc";
+        String[] split = a.split("\\.");
+        String s = split[0];
+        System.out.println(s);
 
+    }
+
+    @Test
+    public void test023() {    //.substring(len1，len2)的截取问题，很明显 len2的数值 是取不到的，真正取的是len2-1的数值。
+        String a="abcde";
+        String s = a.substring(0,5);
+
+        System.out.println(s);
+
+    }
+
+    @Test
+    public void test024() {    //.substring(len1，len2)的截取问题，很明显 len2的数值 是取不到的，真正取的是len2-1的数值。
+        List<String> a=Arrays.asList("a","b");
+         a=Arrays.asList("c","d");
+//        String s = a.substring(0,5);
+
+        System.out.println(a);
+
+    }
 }
