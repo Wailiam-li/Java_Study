@@ -38,13 +38,13 @@ public class GetAnotationTest {
             Annotation[] declaredAnnotations = declaredMethod.getDeclaredAnnotations();
             //这里为什么没有获取到@MyTest02注解呢？？？？
             //   —————>很有可能是因为时效的问题，默认是到 CLASS (默认值)：字节码文件后就失效了！！
-            for (Annotation declaredAnnotation : declaredAnnotations) {
-                System.out.println("方法是：" + declaredMethod + "\n" + "注解是：" + declaredAnnotation);
+            for (Annotation declaredAnnotation : declaredAnnotations) {  //这里遍历注解是因为，一个方法上可能有多个注解；
+                System.out.println("方法是：" + declaredMethod.toString() + "\n" + "注解是：" + declaredAnnotation);
             }
         }
     }
 
-    @Test    //解析方法中的注解
+    @Test    //解析成员变量中的注解
     public void parseMethod02() throws ClassNotFoundException, NoSuchMethodException {
         Class aClass = Class.forName("JavaKnowledge.Annotation.annotationAnalysis.AnnotationUse");
 
@@ -56,7 +56,7 @@ public class GetAnotationTest {
             //注意：这里是方法.getAnnotation()
             System.out.println(myTest02);
             System.out.println(myTest02.value());  //注：这里的value只是@MyTest02的一个属性值，和下面的age一样。
-            System.out.println(myTest02.age());
+            System.out.println(myTest02.type());
         }
 
     }
