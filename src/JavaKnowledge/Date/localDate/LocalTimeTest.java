@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * ClassName:LocalTime
@@ -41,8 +42,32 @@ public class LocalTimeTest {
         System.out.println(now1);
 //       localDateTime1.
 
+    }
 
+
+    /**
+     * LocalDateTime与Date互相转换
+     *
+     * 从LocalDateTime转换到Date：‌
+     *
+     * 使用LocalDateTime.atZone()方法将LocalDateTime与系统默认时区结合，‌形成ZonedDateTime。‌
+     * 使用ZonedDateTime.toInstant()方法将ZonedDateTime转换为Instant。‌
+     * 使用Date.from()方法将Instant转换为Date。‌
+     * 从Date转换到LocalDateTime：‌
+     *
+     * 使用Date.toInstant()方法将Date转换为Instant。‌
+     * 使用Instant.atZone()方法将Instant与一个时区结合，‌形成ZonedDateTime。‌
+     * 使用ZonedDateTime.toLocalDateTime()方法将ZonedDateTime转换为LocalDateTime。‌
+     */
+    @Test
+    public void test03() {
+        //LocalDateTime转换到Date：‌
+        LocalDateTime localDateTime=LocalDateTime.now();
+        Date date =Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+        System.out.println(date);
 
     }
+
+
 
 }

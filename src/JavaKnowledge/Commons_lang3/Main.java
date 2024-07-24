@@ -1,11 +1,15 @@
 package JavaKnowledge.Commons_lang3;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+
+import static cn.hutool.crypto.SecureUtil.md5;
 
 public class Main {
-    public static void main(String[] args) {
 
 
+    @Test
+    public void StringUtils() {
         //判断是否为空(注：isBlank与isEmpty 区别)
         StringUtils.isBlank(null);
         StringUtils.isBlank("");
@@ -25,4 +29,23 @@ public class Main {
 
 
     }
+
+    /**
+     * md5加密
+     */
+    @Test
+    public void DigestUtils() {
+
+        // MD5加密
+//        String encodeStr = DigestUtils.md5Hex(text + key);
+//        // 密钥进行验证
+//        String md5Text = md5(text, key);
+//        if (md5Text.equalsIgnoreCase(md5Text)) {
+//            System.out.println("MD5验证通过");
+//        }
+
+
+    }
+
+
 }
