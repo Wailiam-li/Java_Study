@@ -104,7 +104,14 @@ public class LocalDateTest {
         System.out.println("转换为java.util.Date对象：" + javaDate);
     }
 
-//老了，身体扛不住，没办法
+    //老了，身体扛不住，没办法
+    @Test   //dateTime类
+    public void test04() {
+        DateTime dateTime = new DateTime();
+        System.out.println(dateTime);
+
+//        DateTime
+    }
 
 
 }
