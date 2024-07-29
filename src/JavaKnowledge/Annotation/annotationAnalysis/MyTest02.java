@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyTest02 {
-    String value();   //注：value是特殊属性，在注解后不写属性时，默认就是value
+    String value();   //注：value是特殊属性，在注解后不写属性时，默认就是value，表示玩家名称
 
-    int age() default 23;
+    String type() default "玩家";
 
 }
