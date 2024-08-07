@@ -203,5 +203,15 @@ public class Test02 {
         System.out.println(year);
     }
 
+    @Test
+    public void test19() {
+        String a = " 11111.1           ";
+        String b=a.trim();  //  由此看来： .trim()方法只可以去除 字符串两边的空格
+        if (b.matches("\\d+")||b.matches("\\d+.\\d+")) {
+            System.out.println(b);
+        }else {
+            System.out.println("!!!!!!!!!!!");
+        }
+    }
 
 }
