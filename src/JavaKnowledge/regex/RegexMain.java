@@ -1,7 +1,12 @@
 package JavaKnowledge.regex;
 
 import cn.hutool.core.date.DateTime;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * ClassName:regexMain
@@ -32,6 +37,50 @@ public class RegexMain {
             System.out.println("数字格式不正确，请检查！");
         }
 
+    }
+
+    @Test  //正则表达式验证科学计数法的形式
+    public void test03() {
+//        String regEx="^([\\+|-]?\\d+(.{0}|.\\d+))[Ee]{1}([\\+|-]?\\d+)$";
+        String regEx = "^([\\+|-]?\\d+(.\\d+))[Ee]{1}([\\+|-]?\\d+)$";
+        String a = "1.820824873E+10";
+        if (a.matches(regEx)) {
+            System.out.println("666");
+            BigDecimal originValue = new BigDecimal(a);
+            System.out.println("BigDecimal类型原数字是：" + originValue);
+//            System.out.println("正确的手机号是："+originValue.toString());
+            System.out.println("正确的手机号是：" + originValue.toPlainString());
+        } else {
+            System.out.println("555555");
+        }
+    }
+
+
+    @Test  //正则表达式验证科学计数法的形式
+    public void test04() {
+        String objectKey = "temp/s3.server.keyPath/invoice/收款条目_202408131125.xlsx";
+        String exportName = objectKey.substring(objectKey.lastIndexOf("/") + 1);
+        //objectKey.lastIndexOf("/")这个是获取这个符号的索引位置。这里”/“所在的索引位置就是30，那么.substring()就是在31的位置上开始一直索引到末尾
+        System.out.println(exportName);
+
+
+    }
+
+    @Test
+    public void test05() {
+        List<String> list = Arrays.asList("湖南省张家界市", "湖南省长沙市");
+        if (list.contains("湖南")) {
+            System.out.println("包含湖南");
+        } else {
+            System.out.println("不包含湖南");
+        }
+    }
+
+    @Test
+    public void test06() {
+        //RandomStringUtils.random()生成一个指定长度的随机字符串，包含指定的字符集中的字符. 即从字符集"abcdeABCDE123456"中随机生成一个6位的字符串
+        String password = RandomStringUtils.random(6, "abcdeABCDE123456");
+        System.out.println(password);
     }
 
 
