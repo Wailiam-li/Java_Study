@@ -3,6 +3,8 @@ package JavaKnowledge.regex;
 import cn.hutool.core.date.DateTime;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 /**
  * ClassName:regexMain
  * Description:  正则表达式.
@@ -34,5 +36,20 @@ public class RegexMain {
 
     }
 
+    @Test  //正则表达式验证科学计数法的形式
+    public static void main(String[] args) {
+//        String regEx="^([\\+|-]?\\d+(.{0}|.\\d+))[Ee]{1}([\\+|-]?\\d+)$";
+        String regEx="^([\\+|-]?\\d+(.\\d+))[Ee]{1}([\\+|-]?\\d+)$";
+        String a="1.820824873E+10";
+        if (a.matches(regEx)){
+            System.out.println("666");
+            BigDecimal originValue = new BigDecimal(a);
+            System.out.println("BigDecimal类型原数字是："+originValue);
+//            System.out.println("正确的手机号是："+originValue.toString());
+            System.out.println("正确的手机号是："+originValue.toPlainString());
+        }else {
+            System.out.println("555555");
+        }
 
+    }
 }
