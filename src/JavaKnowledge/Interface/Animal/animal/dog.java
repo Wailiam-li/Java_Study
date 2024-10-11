@@ -1,6 +1,6 @@
-package JavaKnowledge.Interface.Animal;
+package JavaKnowledge.Interface.Animal.animal;
 
-import JavaKnowledge.Interface.swimming;
+import JavaKnowledge.Interface.Animal.swimming;
 
 public class dog extends animal implements swimming {
 //注意此类为单独的实体，只定义方法   不定义测试！！再有在test中创建对象并测试；

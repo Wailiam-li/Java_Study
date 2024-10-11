@@ -1,4 +1,4 @@
-package JavaKnowledge.Interface.Animal;
+package JavaKnowledge.Interface.Animal.animal;
 
 public class rabbit extends animal {
     @Override

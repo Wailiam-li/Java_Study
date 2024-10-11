@@ -1,5 +1,7 @@
 package JavaKnowledge.Interface.Animal;
 
+import JavaKnowledge.Interface.Animal.animal.dog;
+
 public class Test {
 
     public static void main(String[] args) {
