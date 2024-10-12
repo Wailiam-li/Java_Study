@@ -1,6 +1,6 @@
-package JavaKnowledge.Interface.Animal;
+package JavaKnowledge.Interface.Animal.animal;
 
-import JavaKnowledge.Interface.swimming;
+import JavaKnowledge.Interface.Animal.swimming;
 
 public class fog extends animal implements swimming {
 
