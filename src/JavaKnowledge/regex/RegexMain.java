@@ -1,6 +1,8 @@
 package JavaKnowledge.regex;
 
 import cn.hutool.core.date.DateTime;
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.crypto.digest.MD5;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
@@ -81,6 +83,19 @@ public class RegexMain {
         //RandomStringUtils.random()生成一个指定长度的随机字符串，包含指定的字符集中的字符. 即从字符集"abcdeABCDE123456"中随机生成一个6位的字符串
         String password = RandomStringUtils.random(6, "abcdeABCDE123456");
         System.out.println(password);
+    }
+
+
+    @Test //原来加盐是随机生成若干个字符串并用一个特殊的符号将原加密的密码连接起来，一次形成加密后的密码。
+          //登录验证密码的时候先检查有没有包含连接符...
+    public void test07() {
+        String password = "ceshi123456";
+        System.out.println(encode(password));
+    }
+
+    private static String encode(String password) {
+        String salt = RandomUtil.randomString(6);
+        return salt+"@"+MD5.create().digestHex(password);
     }
 
 
