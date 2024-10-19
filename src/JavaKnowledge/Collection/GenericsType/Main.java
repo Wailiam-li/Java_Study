@@ -1,4 +1,4 @@
-package JavaKnowledge.Collection.List.Generics;
+package JavaKnowledge.Collection.GenericsType;
 
 /**
  * @Date:2023/9/17 17:23

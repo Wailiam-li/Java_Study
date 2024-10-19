@@ -1,4 +1,4 @@
-package JavaKnowledge.Collection.List.Generics;
+package JavaKnowledge.Collection.GenericsType;
 
 import java.util.Arrays;
 
