@@ -38,8 +38,7 @@ public class Main {
             String value = entry.getValue();
             System.out.println(key + "--" + value);
         }
-
-
     }
+
 
 }
