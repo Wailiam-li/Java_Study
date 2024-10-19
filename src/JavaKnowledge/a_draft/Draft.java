@@ -93,7 +93,9 @@ public class Draft {
         if (list1 == null || list1.isEmpty()) {
             System.out.println("66666");
         }
-
+        if (!list1.isEmpty() && list1.size()==1) {
+            System.out.println("7777");
+        }
     }
 
     @Test
