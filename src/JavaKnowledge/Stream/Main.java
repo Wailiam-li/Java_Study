@@ -1,6 +1,11 @@
 package JavaKnowledge.Stream;
 
+import JavaKnowledge.a_draft.Per;
+import org.junit.Test;
+
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /*
@@ -30,4 +35,19 @@ public class Main {
         //对字符变量 使用.split()方法后，返回的是一个字符型数组！因此可以直接 接数组的索引下标.
         System.out.println(aaa);
     }
+
+    @Test
+    public void test() {
+        List<Per> pers = Arrays.asList(new Per("李威", 18), new Per(null, 19));
+        List<Per> lis = pers.stream().filter(e -> e.getName() != null).filter(e -> e.getName().contains("李")).collect(Collectors.toList());
+        System.out.println(lis);
+    }
+
+
+
+
+
+
+
+
 }

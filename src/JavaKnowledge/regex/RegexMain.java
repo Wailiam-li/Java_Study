@@ -93,6 +93,7 @@ public class RegexMain {
         System.out.println(encode(password));
     }
 
+
     private static String encode(String password) {
         String salt = RandomUtil.randomString(6);
         return salt+"@"+MD5.create().digestHex(password);
