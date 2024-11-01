@@ -24,7 +24,7 @@ public class RegexMain {
     public void test01() {
         String phoneNum = "13517077146";
         if (phoneNum.matches("1[3-9]\\d{9}")) {  //注：1.数字范围之间是用“-”！  2.任意数字是用\\d
-            System.out.println("手机号码校验无误！");
+            System.out.println("手机号码校验无误！"); //
         } else {
             System.out.println("手机号码格式不正确，请检查！");
         }
