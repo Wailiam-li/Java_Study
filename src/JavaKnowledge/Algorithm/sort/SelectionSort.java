@@ -13,10 +13,10 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         //1.定义数组
-        int[] arr = {2, 4, 5, 3, 1};
+        int[] arr = {4, 2, 5, 3, 1};
 
         for (int i = 0; i < arr.length; i++) { //表示一共需要进行几轮
-            for (int j = 1 + i; j < arr.length; j++) { //表示每一轮进行选出最大的数移到最右边。
+            for (int j = 1 + i; j < arr.length; j++) { //表示每一轮进行选出最小的数放到第一个位置。
                 // 注：这里的j=i+1，表示每一轮只需要在上一轮基础上 往后 比较即可
                 if (arr[i] > arr[j]) {  //
                     int temp = arr[i];

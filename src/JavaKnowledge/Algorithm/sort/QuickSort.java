@@ -28,7 +28,7 @@ public class QuickSort {
         /*这里这个递归的出口我不是很理解——————>针对单个小段的排序的结束条件就是：start>end,这里的start和end就是一小段排序中
           的头和尾，因此当头和尾相遇（表示这个小组排序只有一个数字了），或 头>尾时，就不用再进行排序了。
 */
-        if (start>=end){
+        if (start >= end) {
             return;
         }
 
@@ -55,7 +55,7 @@ public class QuickSort {
             arr[end] = temp;
         }
         //再把基准值归位
-        int temp = arr[i];       //这里为什么是和arr[start]交换呢？
+        int temp = arr[i];       //这里为什么是和arr[start]交换呢？——>start和end最后相等才能跳出循环，因此用start和end都是一样的。，
         arr[i] = arr[start];
         arr[start] = temp;
 
