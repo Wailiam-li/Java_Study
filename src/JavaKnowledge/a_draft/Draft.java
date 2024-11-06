@@ -401,4 +401,16 @@ public class Draft {
         System.out.println(a);
 
     }
-}
+
+
+    @Test
+    public void test025() {
+        if (1==2)
+            System.out.println("yes");  //如果if后面不加括号的话，只会执行后面紧跟的一句，再后面的就不执行了；
+        System.out.println("no");
+
+
+    }
+
+
+    }
