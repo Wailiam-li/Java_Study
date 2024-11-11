@@ -18,10 +18,10 @@ public class Student implements Serializable {
 
     private static final long serialVersionUID = 6115832161017809556L;
     //!!注：要有“static、final”这两个关键字，static表示全局共享，final表示永远不变
-      //鼠标放在类上，art+enter就会弹出相关提示
+    //鼠标放在类上，art+enter就会弹出相关提示
     private String name;
     private int age;
-   private transient String address;
+    private transient String address;
 
     @Override
     public String toString() {
