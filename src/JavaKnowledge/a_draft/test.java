@@ -1,5 +1,6 @@
 package JavaKnowledge.a_draft;
 
+import JavaKnowledge.Enum.Season;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -234,7 +235,16 @@ public class test {
         Per p2=new Per("lilo",23);
         List<Per> list=new ArrayList<>();
         list.add(p1); list.add(p2);
+    }
 
+
+    @Test
+    public void test016() {
+        if (Objects.equals(null,null)){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
 
 
     }
