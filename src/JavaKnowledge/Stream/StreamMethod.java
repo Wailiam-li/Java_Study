@@ -139,7 +139,7 @@ public class StreamMethod {
                 .forEach(s -> System.out.println(s));
     }
 
-    //以下是终止操作符!!!!!!!!!!!!
+    //----------------------------------------------------以下是终止操作符!!!!!!!!!!!!
     /*
      * forEach功能：循环遍历
      */
@@ -182,4 +182,21 @@ public class StreamMethod {
         14=[User{name='Timi', age=14}]}
          */
     }
+
+    /**
+     *
+     * 如何从集合对象中获取到某个字段为某个值的对象呢？——>get()方法！ 注：这里.findFirst()方法是可以防止重复的情况出现的。
+     */
+    @Test
+    public void get()  {
+        List<User> users = Arrays.asList(
+                new User("Jack", 9),
+                new User("Kreas", 9),
+                new User("Marry", 13),
+                new User("Timi", 14));
+
+        User user1 = users.stream().filter(user -> user.getAge() == 14).findFirst().get();
+        System.out.println(user1);
+    }
+
 }

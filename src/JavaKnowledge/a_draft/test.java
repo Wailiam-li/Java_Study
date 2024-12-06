@@ -248,6 +248,22 @@ public class test {
 
 
     }
+
+
+    @Test
+    public void test017() {
+        //如果前面的条件为false，则会进入后面的判断，由此看来 后面的and关系 即使没有大括号 两个也是 and的关系，需要同时成立才满足
+        if (((1==1)&&(0==1))||(1==1)&&(3==4)){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
+
+    }
+
+
+
+
 }
 
 
