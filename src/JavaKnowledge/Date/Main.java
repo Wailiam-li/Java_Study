@@ -4,7 +4,9 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -12,9 +14,9 @@ import java.util.Date;
     知识学习
  */
 public class Main {
-        /*
-          关于SimpleDateFormat中.parse()和.format()方法的使用；
-         */
+    /*
+      关于SimpleDateFormat中.parse()和.format()方法的使用；
+     */
     @Test
     public void test() {
         String date = "2023-06-09";
@@ -147,14 +149,14 @@ public class Main {
         System.out.println(cal.getTime());
 
         //当季         
-        int startMonth=(cal.get(Calendar.MONTH) / 3)*3;
+        int startMonth = (cal.get(Calendar.MONTH) / 3) * 3;
         cal.set(Calendar.MONTH, startMonth);
         cal.set(Calendar.DAY_OF_MONTH, 1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
-        System.out.println("当季："+cal.getTime());
+        System.out.println("当季：" + cal.getTime());
 
         // 设置结束日期为季度的最后一天
         cal.set(Calendar.MONTH, startMonth + 2);
@@ -163,29 +165,51 @@ public class Main {
         cal.set(Calendar.MINUTE, 59);
         cal.set(Calendar.SECOND, 59);
         cal.set(Calendar.MILLISECOND, 999);
-        System.out.println("当季末："+cal.getTime());
+        System.out.println("当季末：" + cal.getTime());
 
 
-
-    //当年
+        //当年
         cal.set(Calendar.MONTH, Calendar.JANUARY);
         cal.set(Calendar.DAY_OF_MONTH, 1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
-        System.out.println("当年："+cal.getTime());
+        System.out.println("当年：" + cal.getTime());
 
-    // 设置结束日期为年度的最后一天
+        // 设置结束日期为年度的最后一天
         cal.set(Calendar.MONTH, Calendar.DECEMBER);
         cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
         cal.set(Calendar.HOUR_OF_DAY, 23);
         cal.set(Calendar.MINUTE, 59);
         cal.set(Calendar.SECOND, 59);
         cal.set(Calendar.MILLISECOND, 999);
-        System.out.println("当年末："+cal.getTime());
+        System.out.println("当年末：" + cal.getTime());
 
-}
+    }
+
+    @Test
+    public void test06() {
+
+        // 创建两个LocalDateTime对象
+        LocalDateTime dateTime1 = LocalDateTime.of(2023, 10, 1, 10, 0, 0);
+        LocalDateTime dateTime2 = LocalDateTime.of(2024, 10, 5, 9, 30, 0);
+
+
+        // 计算时间差
+        Duration duration = Duration.between(dateTime1, dateTime2);
+
+        // 获取天数、小时数、分钟数和秒数
+        long days = duration.toDays();    //只精确到“天”，不进行四舍五入。
+        long hours = duration.toHours() % 24;
+        long minutes = duration.toMinutes() % 60;
+        long seconds = duration.getSeconds() % 60;
+
+        System.out.println("时间差: " + days + " 天 " );
+//                System.out.println("时间差: " + days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒");
+    }
+
+
 }
 
 
