@@ -93,7 +93,7 @@ public class Draft {
         if (list1 == null || list1.isEmpty()) {
             System.out.println("66666");
         }
-        if (!list1.isEmpty() && list1.size()==1) {
+        if (!list1.isEmpty() && list1.size() == 1) {
             System.out.println("7777");
         }
     }
@@ -177,8 +177,8 @@ public class Draft {
     @Test  //对判断语句进行
     public void test08() {
         int a = 1;
-        Per per1 = new Per();
-        if (a == 1 && per1.getName().equals("李威")) {
+        Per per1 = null;
+        if (a == 1 || per1.getName().equals("李威")) {
             System.out.println("666666");
         }
     }
@@ -284,7 +284,7 @@ public class Draft {
 
     }
 
-//    @Test
+    //    @Test
     public Date endMonth() {
         Calendar calendar = Calendar.getInstance();
         int month = calendar.get(Calendar.MONTH); //4
@@ -308,28 +308,28 @@ public class Draft {
 
 
     @Test
-    public void test16(){
-        String a="2";
-        char b=a.charAt(a.length()-1);
+    public void test16() {
+        String a = "2";
+        char b = a.charAt(a.length() - 1);
         System.out.println(b);
 
 
     }
 
     @Test
-    public void test17(){
-      if (1==1&&1==2){
-          System.out.println("yes");
-      }else {
-          System.out.println("no");
-      }
+    public void test17() {
+        if (1 == 1 && 1 == 2) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
     }
 
     @Test
-    public void test18(){
-        if (1==1&&1==2){
+    public void test18() {
+        if (1 == 1 && 1 == 2) {
             System.out.println("yes");
-        }else {
+        } else {
             System.out.println("no");
         }
     }
@@ -342,11 +342,11 @@ public class Draft {
         list.add(3);
         list.add(null);
 //        System.out.println(list);
-        List<Integer> list2 = Arrays.asList(3,4,5);
+        List<Integer> list2 = Arrays.asList(3, 4, 5);
 
         list.addAll(list2);
 
-        list=list.stream().distinct().filter(r->r!=null&&r!=9999).collect(Collectors.toList());
+        list = list.stream().distinct().filter(r -> r != null && r != 9999).collect(Collectors.toList());
 
         System.out.println(list);
 //        Set set = new HashSet<>(list);
@@ -357,17 +357,17 @@ public class Draft {
 
     @Test  //对set集合的取并集测试
     public void test20() {
-      Long a=1L;
-      Long b=2L;
+        Long a = 1L;
+        Long b = 2L;
 
-      String c=""+a+"-"+b;
+        String c = "" + a + "-" + b;
         System.out.println(c);
 
     }
 
     @Test
     public void test021() {    //.split(".")需要用到正则表达式的问题
-        String a="aaa.bbbb";
+        String a = "aaa.bbbb";
         String[] split = a.split("\\.");
         String s = split[0];
         System.out.println(s);
@@ -376,7 +376,7 @@ public class Draft {
 
     @Test
     public void test022() {    //.split(".")需要用到正则表达式的问题
-        String a="aaa.bbbb.ccc";
+        String a = "aaa.bbbb.ccc";
         String[] split = a.split("\\.");
         String s = split[0];
         System.out.println(s);
@@ -385,8 +385,8 @@ public class Draft {
 
     @Test
     public void test023() {    //.substring(len1，len2)的截取问题，很明显 len2的数值 是取不到的，真正取的是len2-1的数值。
-        String a="abcde";
-        String s = a.substring(0,5);
+        String a = "abcde";
+        String s = a.substring(0, 5);
 
         System.out.println(s);
 
@@ -394,8 +394,8 @@ public class Draft {
 
     @Test
     public void test024() {    //.substring(len1，len2)的截取问题，很明显 len2的数值 是取不到的，真正取的是len2-1的数值。
-        List<String> a=Arrays.asList("a","b");
-         a=Arrays.asList("c","d");
+        List<String> a = Arrays.asList("a", "b");
+        a = Arrays.asList("c", "d");
 //        String s = a.substring(0,5);
 
         System.out.println(a);
@@ -405,12 +405,29 @@ public class Draft {
 
     @Test
     public void test025() {
-        if (1==2)
+        if (1 == 2)
             System.out.println("yes");  //如果if后面不加括号的话，只会执行后面紧跟的一句，再后面的就不执行了；
         System.out.println("no");
 
 
     }
 
+    @Test
+    public void test026() {
+        List list = new ArrayList();
+        System.out.println(list.size());
 
     }
+
+
+    @Test
+    public void test027() {
+        Map<String,String> map=null ;
+        if (map != null && !map.isEmpty()) {  //   "||"是两个条件都会判断， "&&"是只要有一个条件满足就不往下判断了。
+            System.out.println("1111111111"); //  以上结论是错误的！！！  “||”的判断是：当第一个条件并不满足时（为false），
+                                          //     会往下判断第二个条件；
+        }
+    }
+
+
+}

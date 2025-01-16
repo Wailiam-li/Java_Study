@@ -11,7 +11,7 @@ public class ByteDemo {
      * 根据编码的格式不一样，对应的字节也不一样*如果是UTF-8:一个中文对应的是三个字节*如果是GBK :一个中文对应的是二个字节
      **/
     public static void main(String[] args) throws Exception {
-        String a = "李i";
+        String a = "李a";
         byte[] bytes = a.getBytes(); //得到两个字节。 如果里面不穿参数默认是UTF-8
 //        byte[] bytes = a.getBytes("GBK"); //得到两个字节。 如果里面不穿参数默认是UTF-8
         for (byte aByte : bytes) {

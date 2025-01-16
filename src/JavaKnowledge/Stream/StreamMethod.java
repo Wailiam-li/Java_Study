@@ -30,6 +30,16 @@ public class StreamMethod {
     }
 
     @Test
+    public void filter02() {
+        List<String> list = Arrays.asList("abc", "ab", "a", "efg", "bcd","");
+        List<String> filter = list.stream().filter(str -> StringUtils.isNotEmpty(str)).collect(Collectors.toList());
+        System.out.println(filter);    //这里应该是过滤留下来
+        System.out.println("-------------------");
+    }
+
+
+
+    @Test
     public void filter2() {
         Per p1=new Per("",null);
         Per p2=new Per("q",22);
@@ -200,3 +210,6 @@ public class StreamMethod {
     }
 
 }
+
+
+
